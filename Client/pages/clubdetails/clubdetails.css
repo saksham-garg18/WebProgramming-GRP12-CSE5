@@ -1,0 +1,135 @@
+.deets-con {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+    align-items: center;
+    /* Vertically aligns the logo and the text */
+}
+
+.logo-con {
+    width: 12rem;
+    height: 12rem;
+}
+
+.logo-con img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 0 0.779rem rgba(45, 138, 229, 0.3);
+}
+
+.namemotto-con {
+    display: flex;
+    flex-direction: column;
+    /* Stack title and motto vertically */
+    justify-content: center;
+    /* Align vertically in the center */
+}
+
+.title-con {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: left;
+
+}
+
+.motto-con {
+    font-size: var(--subtitle-font-size);
+    /* Adjust the font size for the motto */
+    text-align: left;
+}
+
+.quickinfo-con {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    padding: 2rem 0;
+}
+
+.detail-scroll {
+    height: 70%;
+    overflow-y: auto;
+}
+
+.quickinfo-card {
+    width: 32rem;
+    height: 10rem;
+}
+
+.cardhead {
+    margin-bottom: 0.4rem;
+    font-size: var(--h1-font-size);
+    font-weight: 550;
+}
+
+.eventitem {
+    display: flex;
+    align-items: flex-start;
+    /* Vertically align icon and text */
+    margin-bottom: 1rem;
+    /* Add space between list items */
+}
+
+.eventdeets-con {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.eventname-con {
+    font-size: 1rem;
+    /* Adjust the font size as needed */
+}
+
+.eventvt-con {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.85rem;
+    color: var(--m2);
+}
+
+.git-i {
+    margin-right: 0.5rem;
+}
+
+.contacts-con {
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cont-con {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.link-con {
+    display: flex;
+    gap: 1rem
+}
+
+.linkitem-con {
+    font-size: 0.8rem;
+    padding: 0.4rem;
+    height: 1.8rem;
+}
+
+.tabs-con {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.content-con {
+    width: auto;
+    height: auto;
+    margin: 1rem auto;
+}
+
+.conttext-con {
+    font-size: 0.9rem;
+}

@@ -1,0 +1,11 @@
+.infoitem-con {
+    display: flex;
+    margin-top: 0.2rem;
+}
+
+.events-RSVP {
+    margin-left: auto;
+    width: 7rem;
+    height: 2.5rem;
+    font-weight: 500;
+}

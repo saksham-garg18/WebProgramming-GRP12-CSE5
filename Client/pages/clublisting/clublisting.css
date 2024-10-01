@@ -1,0 +1,49 @@
+.clublisting-maincon {
+    margin: 2rem;
+}
+
+.cl-top-con {
+    display: flex;
+    justify-content: space-between;
+}
+
+.clubcards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.cl-title {
+    font-size: var(--subtitle-font-size);
+    font-weight: 600;
+}
+
+.cl-searchbox {
+    width: 18rem; /* Converted from 288px */
+    height: 2.5rem; /* Converted from 35px */
+    border-radius: 0.3125rem; /* Converted from 5px */
+    background-color: rgba(255, 255, 255, 0.2); /* White with 20% opacity */
+    backdrop-filter: blur(3.1px); /* Background blur of 3.1px */
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+}
+
+.cl-search-text {
+    background-color: transparent !important;
+    border: none;
+    padding: 0rem 0.5rem;
+}
+
+.cl-search-text:active {
+    border: none !important;
+    
+}
+.cl-search-text:focus {
+    border: none !important;
+    
+}
+.cl-search-text:valid {
+    color: white;
+}
