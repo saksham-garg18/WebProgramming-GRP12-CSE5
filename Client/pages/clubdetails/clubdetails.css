@@ -40,6 +40,10 @@
     text-align: left;
 }
 
+.eventlist-con {
+    /* height: 70%; */
+}
+
 .quickinfo-con {
     display: flex;
     gap: 1rem;
@@ -47,14 +51,17 @@
     padding: 2rem 0;
 }
 
+
+
 .detail-scroll {
-    height: 70%;
+    height: 100%;
     overflow-y: auto;
 }
 
 .quickinfo-card {
     width: 32rem;
-    height: 10rem;
+    max-height: 15rem;
+
 }
 
 .cardhead {
@@ -75,6 +82,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    cursor: pointer;
 }
 
 .eventname-con {
@@ -96,6 +104,7 @@
 .contacts-con {
     font-size: 0.8rem;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
 }
@@ -107,8 +116,18 @@
     align-items: flex-start;
 }
 
+.contacts-con, .cont-con {
+    flex-direction: column;
+    height: auto;
+    align-items: flex-start;
+    gap: 1rem;
+    font-size: 0.9rem;
+}
+
 .link-con {
     display: flex;
+    height: auto;
+    flex-wrap: wrap;
     gap: 1rem
 }
 
@@ -132,4 +151,71 @@
 
 .conttext-con {
     font-size: 0.9rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.whyus-mile {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+@media screen and (max-width: 1200px) {
+    .quickinfo-card {
+        height: auto;
+    }
+
+    .contacts-con, .cont-con {
+        flex-direction: column;
+        height: auto;
+        align-items: flex-start;
+        gap: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .cont-con {
+        
+    }
+    
+}
+@media screen and (max-width: 1075px) {
+    .deets-con {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .title-con {
+        text-align: center;
+    }
+
+    .namemotto-con {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .quickinfo-con {
+        flex-direction: column;
+    }
+
+    .quickinfo-card {
+        width: auto;
+        
+    }
+    
+}
+
+@media screen and (max-width: 850px) {
+    .whyus-mile {
+        flex-direction: column;
+    }
+    
+}
+@media screen and (max-width: 500px) {
+    .tcard.idcard {
+        transform: scale(0.8);
+    }
+    
 }

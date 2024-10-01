@@ -97,7 +97,7 @@ body {
   color: var(--m1);
   background: url(./web-bg.png);
   background-size: 100vw auto; 
-  background-repeat: no-repeat; 
+  /* background-repeat: no-repeat;  */
 }
 
 .section {
