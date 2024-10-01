@@ -3,9 +3,19 @@
     margin-top: 0.2rem;
 }
 
-.events-RSVP {
-    margin-left: auto;
-    width: 7rem;
-    height: 2.5rem;
-    font-weight: 500;
+.linitem-con:hover {
+    background: linear-gradient(320deg, rgba(0, 133, 255, 0.2), transparent); /* Gradient with -49 degrees */
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #0084FF; /* Stroke set to #0084FF with thickness of 1.19px */
+    border-radius: 0.371rem; /* 5.93px converted to rem */
+    cursor: pointer;
+    backdrop-filter: blur(4.74px); /* Background blur remains as 4px */
+    transition-duration: 0.3s;
+}
+
+.linitem-con a {
+    padding: 0.3rem;
 }

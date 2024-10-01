@@ -174,11 +174,6 @@
         gap: 1rem;
         font-size: 0.9rem;
     }
-
-    .cont-con {
-        
-    }
-    
 }
 @media screen and (max-width: 1075px) {
     .deets-con {

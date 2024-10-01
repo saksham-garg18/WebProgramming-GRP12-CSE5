@@ -12,8 +12,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title>event details</title>
 </head>
 
@@ -41,7 +39,7 @@
 
     <div class='clubdeets-maincon section2'>
 
-        <!-- {/* event title, logo & RSVP */} -->
+        <!-- {/* event title & logo */} -->
         <div class='deets-con'>
 
             <div class='logo-con'>
@@ -51,17 +49,12 @@
             <div class='namemotto-con'>
 
                 <div class='title-con'>
-                    <span>Hult Prize</span>
+                    <a href="https://www.hultprize.org/">Hult Prize 2025</a>
                 </div>
 
                 <div class='motto-con'>
                     <span>Infinity</span>
                 </div>
-
-            </div>
-
-            <div class='lbcard events-RSVP'>
-                RSVP
             </div>
         </div>
 
@@ -119,23 +112,28 @@
                             <i class="fa-solid fa-phone git-i"></i>
                             <span>+91 9999999999</span>
                         </div>
-                        <div class='ig-con'>
-                            <i class="fa-brands fa-instagram git-i"></i>
-                            <span>club.bmu</span>
-                        </div>
 
+                        <a href="https://www.instagram.com/hultprizebmu/">
+                            <div class='ig-con'>
+                                <i class="fa-brands fa-instagram git-i"></i>
+                                <span>club.bmu</span>
+                            </div>
+                        </a>
                     </div>
                     <div class='cont-con'>
+                        <a href="mailto:hultprize@bmu.edu.in">
+                            <div class='email-con'>
+                                <i class="fa-solid fa-envelope git-i"></i>
+                                <span>clubaffairs.secretary@bmu.edu.in</span>
+                            </div>
+                        </a>
 
-                        <div class='email-con'>
-                            <i class="fa-solid fa-envelope git-i"></i>
-                            <span>clubaffairs.secretary@bmu.edu.in</span>
-                        </div>
-
-                        <div class='email-con'>
-                            <i class="fa-brands fa-linkedin git-i"></i>
-                            <span>clubs-bmu</span>
-                        </div>
+                        <a href="https://in.linkedin.com/in/hultprize-bmu-7171ab21a">
+                            <div class='email-con'>
+                                <i class="fa-brands fa-linkedin git-i"></i>
+                                <span>Hult Prize BMU </span>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -147,44 +145,75 @@
                 </div>
 
                 <div class='link-con'>
-                    <div class='lbcard linkitem-con'>
-                        <span>
-                            Apply for EC
-                        </span>
-                    </div>
-                    <div class='lbcard linkitem-con'>
-                        <span>
-                            Apply for EC
-                        </span>
-                    </div>
-                    <div class='lbcard linkitem-con'>
-                        <span>
-                            Apply for EC
-                        </span>
-                    </div>
+                    <a href="https://forms.gle/ywf2KDwexdyzdLef6">
+                        <div class='lbcard linkitem-con'>
+                            <span>
+                                Apply for EC
+                            </span>
+                        </div>
+                    </a>
+                    <a href="https://forms.gle/ywf2KDwexdyzdLef6">
+                        <div class='lbcard linkitem-con'>
+                            <span>
+                                Apply for EC
+                            </span>
+                        </div>
+                    </a>
+                    <a href="https://forms.gle/ywf2KDwexdyzdLef6">
+                        <div class='lbcard linkitem-con'>
+                            <span>
+                                Apply for EC
+                            </span>
+                        </div>
+                    </a>
+                    <a href="https://forms.gle/ywf2KDwexdyzdLef6">
+                        <div class='lbcard linkitem-con'>
+                            <span>
+                                Apply for EC
+                            </span>
+                        </div>
+                    </a>
+                    <a href="https://forms.gle/ywf2KDwexdyzdLef6">
+                        <div class='lbcard linkitem-con'>
+                            <span>
+                                Apply for EC
+                            </span>
+                        </div>
+                    </a>
+                    <a href="https://forms.gle/ywf2KDwexdyzdLef6">
+                        <div class='lbcard linkitem-con'>
+                            <span>
+                                Apply for EC
+                            </span>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
 
         <!-- {/* tabs to intra page headings */} -->
         <div class='tabs-con'>
-            <div class='linitem-con lbcard'>
-                <span>About</span>
+            <div class='linitem-con about-tab'>
+                <!-- <a href="#about-con"> -->
+                    <span>
+                        About
+                    </span>
+                <!-- </a> -->
             </div>
-            <div class='linitem-con'>
+            <div class='linitem-con highlight-tab'>
                 <span>Highlights</span>
             </div>
-            <div class='linitem-con'>
+            <div class='linitem-con OC-tab'>
                 <span>Organising Committee</span>
             </div>
-            <div class='linitem-con'>
+            <div class='linitem-con pre-req-tab'>
                 <span>Pre-Requisites</span>
             </div>
         </div>
 
         <!-- {/* Club Descrition */} -->
-        <div class='dbcard content-con'>
-            <div class='cardhead'>
+        <div class='dbcard content-con' id="about-con">
+            <div class='cardhead '>
                 <span>About</span>
             </div>
             <div class='conttext-con'>
@@ -250,35 +279,68 @@
                 </p>
             </div>
         </div>
-        <div class='dbcard content-con'>
-            <div class='cardhead'>
-                <span>Highlights</span>
+
+        <div class="whyus-mile prereq-high">
+            <div class='dbcard content-con'>
+                <div class='cardhead'>
+                    <span>Highlights</span>
+                </div>
+                <div class='conttext-con'>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil in, molestiae ipsa culpa quam animi
+                    ab
+                    eos facilis ex quo, consectetur consequuntur corporis modi suscipit voluptas provident ducimus
+                    assumenda
+                    maxime necessitatibus mollitia. Nulla autem harum aspernatur qui dignissimos nobis iste molestiae ex
+                    vel
+                    ipsam possimus ad magnam eaque aut nesciunt, id mollitia necessitatibus laudantium architecto. Vel
+                    doloremque debitis eaque odio, nulla expedita atque autem laborum dolor architecto consequatur
+                    voluptatibus quaerat, accusantium labore quis quia quisquam possimus commodi voluptatem? Aliquid
+                    magnam
+                    excepturi voluptatem fugit adipisci dolore similique veniam expedita? Dolores, iusto tenetur!
+                    Reprehenderit, excepturi mollitia culpa blanditiis quidem impedit molestiae aliquam atque voluptatem
+                    molestias ipsam, tempora modi laudantium? Consequatur autem dolores aliquid esse iure repellat quo
+                    pariatur error dignissimos facilis veritatis sint aut minus qui odit, incidunt natus! Aliquid quia
+                    voluptatem consequatur sint provident, perspiciatis corrupti numquam eos iure earum obcaecati
+                    consequuntur excepturi enim quas minus sunt suscipit, tenetur eveniet, quos libero dolor? Hic amet
+                    voluptatum, officiis voluptatibus nihil asperiores adipisci repellat, doloribus dolores, laboriosam
+                    aperiam? Repellendus neque voluptatibus fuga, possimus doloremque impedit iste sint, quas vero
+                    facere
+                    beatae! Atque, optio iure. Ipsum voluptate nam quibusdam, eveniet vel repellat beatae repudiandae
+                    quisquam laudantium ratione deleniti omnis, incidunt adipisci, enim fugiat expedita doloribus
+                    doloremque? Nam, voluptatem fugiat vitae quis quae delectus, dignissimos, adipisci placeat eveniet
+                    quasi
+                    deleniti. Quo ducimus suscipit, saepe adipisci fuga dolores eveniet explicabo corporis soluta,
+                    placeat
+                    incidunt aliquid facilis. Maiores nihil, quibusdam quia doloremque laborum necessitatibus facilis
+                    expedita, animi repellendus, voluptatibus nam minima in! Odit magnam quibusdam deserunt? Sapiente
+                    rem
+                    quis tempora exercitationem debitis in dolorum voluptas velit nostrum quia rerum atque mollitia sed
+                    voluptatibus, minima impedit dignissimos tempore quibusdam explicabo enim ducimus quo aliquam
+                    asperiores
+                    nisi. Cumque dolore velit, ipsam perspiciatis, labore possimus ex deserunt laudantium dolorum
+                    architecto, quisquam voluptatem nisi saepe animi neque fugiat. Consequuntur, ipsam incidunt?
+                </div>
             </div>
-            <div class='conttext-con'>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil in, molestiae ipsa culpa quam animi ab
-                eos facilis ex quo, consectetur consequuntur corporis modi suscipit voluptas provident ducimus assumenda
-                maxime necessitatibus mollitia. Nulla autem harum aspernatur qui dignissimos nobis iste molestiae ex vel
-                ipsam possimus ad magnam eaque aut nesciunt, id mollitia necessitatibus laudantium architecto. Vel
-                doloremque debitis eaque odio, nulla expedita atque autem laborum dolor architecto consequatur
-                voluptatibus quaerat, accusantium labore quis quia quisquam possimus commodi voluptatem? Aliquid magnam
-                excepturi voluptatem fugit adipisci dolore similique veniam expedita? Dolores, iusto tenetur!
-                Reprehenderit, excepturi mollitia culpa blanditiis quidem impedit molestiae aliquam atque voluptatem
-                molestias ipsam, tempora modi laudantium? Consequatur autem dolores aliquid esse iure repellat quo
-                pariatur error dignissimos facilis veritatis sint aut minus qui odit, incidunt natus! Aliquid quia
-                voluptatem consequatur sint provident, perspiciatis corrupti numquam eos iure earum obcaecati
-                consequuntur excepturi enim quas minus sunt suscipit, tenetur eveniet, quos libero dolor? Hic amet
-                voluptatum, officiis voluptatibus nihil asperiores adipisci repellat, doloribus dolores, laboriosam
-                aperiam? Repellendus neque voluptatibus fuga, possimus doloremque impedit iste sint, quas vero facere
-                beatae! Atque, optio iure. Ipsum voluptate nam quibusdam, eveniet vel repellat beatae repudiandae
-                quisquam laudantium ratione deleniti omnis, incidunt adipisci, enim fugiat expedita doloribus
-                doloremque? Nam, voluptatem fugiat vitae quis quae delectus, dignissimos, adipisci placeat eveniet quasi
-                deleniti. Quo ducimus suscipit, saepe adipisci fuga dolores eveniet explicabo corporis soluta, placeat
-                incidunt aliquid facilis. Maiores nihil, quibusdam quia doloremque laborum necessitatibus facilis
-                expedita, animi repellendus, voluptatibus nam minima in! Odit magnam quibusdam deserunt? Sapiente rem
-                quis tempora exercitationem debitis in dolorum voluptas velit nostrum quia rerum atque mollitia sed
-                voluptatibus, minima impedit dignissimos tempore quibusdam explicabo enim ducimus quo aliquam asperiores
-                nisi. Cumque dolore velit, ipsam perspiciatis, labore possimus ex deserunt laudantium dolorum
-                architecto, quisquam voluptatem nisi saepe animi neque fugiat. Consequuntur, ipsam incidunt?
+            <div class='dbcard content-con'>
+                <div class='cardhead'>
+                    <span>Pre-Requisites</span>
+                </div>
+                <div class='conttext-con'>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium explicabo velit qui ipsam
+                    debitis
+                    ea ab quis totam molestias illum adipisci nostrum, dolore nisi aperiam quia beatae expedita non at
+                    optio
+                    dolorem, voluptas iure sit iste quo. Alias sit ut facere delectus iste perferendis laborum
+                    laudantium
+                    dolorum dolores voluptate, eaque, sequi pariatur suscipit vitae magni? Repudiandae quas modi fugiat
+                    molestias distinctio ratione deserunt iure debitis necessitatibus, dolore ut nobis officiis!
+                    Numquam,
+                    dignissimos esse magnam in omnis deleniti inventore. Nihil eius cum corporis. Beatae rem nesciunt
+                    eius
+                    exercitationem velit doloribus impedit obcaecati et atque consequuntur quidem animi culpa, excepturi
+                    quo
+                    commodi.
+                </div>
             </div>
         </div>
         <div class='dbcard content-con'>
@@ -289,21 +351,7 @@
                 <ClubCard />
             </div>
         </div>
-        <div class='dbcard content-con'>
-            <div class='cardhead'>
-                <span>Pre-Requisites</span>
-            </div>
-            <div class='conttext-con'>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium explicabo velit qui ipsam debitis
-                ea ab quis totam molestias illum adipisci nostrum, dolore nisi aperiam quia beatae expedita non at optio
-                dolorem, voluptas iure sit iste quo. Alias sit ut facere delectus iste perferendis laborum laudantium
-                dolorum dolores voluptate, eaque, sequi pariatur suscipit vitae magni? Repudiandae quas modi fugiat
-                molestias distinctio ratione deserunt iure debitis necessitatibus, dolore ut nobis officiis! Numquam,
-                dignissimos esse magnam in omnis deleniti inventore. Nihil eius cum corporis. Beatae rem nesciunt eius
-                exercitationem velit doloribus impedit obcaecati et atque consequuntur quidem animi culpa, excepturi quo
-                commodi.
-            </div>
-        </div>
+
 
     </div>
 </body>
