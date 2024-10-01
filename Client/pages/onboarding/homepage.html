@@ -1,11 +1,11 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./homepage.css">
     <link rel="stylesheet" href="../../components/style.css">
+    <link rel="stylesheet" href="./homepage.css">
     <title>Home</title>
 </head>
 
@@ -13,15 +13,15 @@
     <div class='home-maincon'>
         <div class="hero-con section">
             <div class="scc-con">
-                <img src={SCC} alt="" class='home-scc' />
+                <img src=../../components/home-scc.png alt="" class='home-scc' />
             </div>
 
             <div class="explore-btn-con">
-                <Link class="explore-btn" to= '../'>Explore</Link>
+                <a class="explore-btn" href='../clublisting/clublisting.html'>Explore</a>
             </div>
 
             <div class="stats-con">
-                <img src={Stats} alt="" class='home-stats section' />
+                <img src='../../components/home-stats.png' alt="" class='home-stats section' />
             </div>
         </div>
 
@@ -35,7 +35,7 @@
             <div class="test-cards ">
                 <div class="test-card">
                     <div class='quote-i'>
-                        <img src={QuoteI} alt="" />
+                        <img src=../../components/quote-icon.png alt="" />
                     </div>
                     <div class='testi-text'>
                         <p>
@@ -59,7 +59,7 @@
                 </div>
                 <div class="test-card">
                     <div class='quote-i'>
-                        <img src={QuoteI} alt="" />
+                        <img src=../../components/quote-icon.png alt="" />
                     </div>
                     <div class='testi-text'>
                         <p>
@@ -83,7 +83,7 @@
                 </div>
                 <div class="test-card">
                     <div class='quote-i'>
-                        <img src={QuoteI} alt="" />
+                        <img src=../../components/quote-icon.png alt="" />
                     </div>
                     <div class='testi-text'>
                         <p>
@@ -112,7 +112,7 @@
             <div class="home-horizon section" ref={horizonRef}>
 
                 <div class="horizon-head">
-                    <img src={Highlights} alt="" />
+                    <img src=../../components/home-horizon-head.png alt="" />
                 </div>
                 <div class="horizon-cards">
                     <div class="horizon-card">
@@ -139,9 +139,13 @@
         </div>
 
         <div class="home-beast-con section">
-            <img src={Beast} alt="" class='home-beast' />
+            <img src=../../components/home-beast.png alt="" class='home-beast' />
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+
+    <script src="homepage.js"></script>
 </body>
 
-</html> -->
+</html>

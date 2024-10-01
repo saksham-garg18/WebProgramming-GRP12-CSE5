@@ -141,6 +141,7 @@
     display: flex;
     align-items: center;
     gap: 2rem;
+    /* visibility: hidden; */
 }
 
 .content-con {
@@ -161,6 +162,8 @@
     justify-content: space-between;
     gap: 1rem;
 }
+
+
 
 @media screen and (max-width: 1200px) {
     .quickinfo-card {
@@ -215,7 +218,33 @@
 }
 @media screen and (max-width: 500px) {
     .tcard.idcard {
-        transform: scale(0.8);
+        /* transform: scale(0.7); */
+        /* align-self: flex-start; */
+        /* width: 8rem;
+        height: 9rem; */
+    }
+
+    .cardhead {
+        margin-bottom: 0.4rem;
+        font-size: var(--h3-font-size);
+        font-weight: 550;
     }
     
+    .conttext-con {
+ align-items: flex-start;
+justify-content: flex-start;
+        
+        padding: 0;
+        gap: 0.5rem;
+    }
+
+    .motto-con {
+        font-size: 1rem;
+    }
+
+    .tabs-con {
+        visibility:visible;
+        scale: 0.8;
+        
+    }
 }
