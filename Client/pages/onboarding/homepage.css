@@ -1,7 +1,7 @@
 .home-maincon {
     background-color: var(--m5);
     color: var(--m1);
-    background: url(../../assets/nexus_home_bg.png);
+    background: url(../../components/nexus_home_bg.png);
     background-size: 100vw auto; 
     /* background-repeat: no-repeat;  */
     height: 100%;
@@ -84,19 +84,19 @@
 #img-stack-item1 {
     width: 80vw;
     top: 3rem;
-    background-image: url(../../assets/home-stack-img.jpg);
+    background-image: url(../../components/home-stack-img.jpg);
 }
 
 #img-stack-item2 {
     width: 85vw;
     top: 6rem;
-    background-image: url(../../assets/home-stack-img.jpg);
+    background-image: url(../../components/home-stack-img.jpg);
 }
 
 #img-stack-item3 {
     width: 90vw;
     top: 9rem;
-    background-image: url(../../assets/home-stack-img.jpg);
+    background-image: url(../../components/home-stack-img.jpg);
 }
 
 .home-testimonials {
