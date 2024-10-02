@@ -177,10 +177,22 @@
     height: 25rem;
     background-color: azure;
     border-radius: 0.5rem;
+    
+}
+
+.horizon-card img {
+    background-size: cover;
+    object-fit: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    /* width: 100%; */
 }
 
 .horizon-head img {
     min-width: 35rem;
+
+
 }
 
 .home-beast-con {
