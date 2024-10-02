@@ -132,6 +132,11 @@
     gap: 1rem
 }
 
+.linkitem-con:hover {
+    border-color: #50F52F;
+    transition-duration: 0.5s;
+}
+
 .linkitem-con {
     font-size: 0.8rem;
     padding: 0.4rem;
@@ -184,7 +189,7 @@
     cursor: pointer;
     backdrop-filter: blur(4.74px);
     /* Background blur remains as 4px */
-    transition-duration: 0.4s;
+    transition-duration: 1s;
 }
 
 @media screen and (max-width: 1200px) {
@@ -228,6 +233,10 @@
 
     }
 
+}
+
+.idcard {
+    cursor: default;
 }
 
 @media screen and (max-width: 850px) {
