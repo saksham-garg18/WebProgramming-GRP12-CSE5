@@ -28,3 +28,5 @@ window.addEventListener('unload', cleanupScrollTrigger);
 
 // Call cleanup when needed, e.g., on page unload
 window.addEventListener('beforeunload', cleanupScrollTrigger);
+
+

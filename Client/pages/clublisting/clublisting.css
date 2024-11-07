@@ -15,7 +15,7 @@
 }
     
 .idcard:hover{
-    scale: 105%;
+    scale: 102%;
     border-color: #0084FF;
     transition-duration: 0.3s;
 }

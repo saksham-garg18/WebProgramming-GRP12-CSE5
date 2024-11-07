@@ -58,12 +58,6 @@
     overflow-y: auto;
 }
 
-.quickinfo-card {
-    width: 32rem;
-    max-height: 15rem;
-
-}
-
 .cardhead {
     margin-bottom: 0.4rem;
     font-size: var(--h1-font-size);
@@ -101,23 +95,10 @@
     margin-right: 0.5rem;
 }
 
-.contacts-con {
-    font-size: 0.8rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.cont-con {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    align-items: flex-start;
-}
 
 .contacts-con,
 .cont-con {
+    display: flex;
     flex-direction: column;
     height: auto;
     align-items: flex-start;

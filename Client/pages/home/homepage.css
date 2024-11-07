@@ -1,11 +1,11 @@
 .home-maincon {
     background-color: var(--m5);
     color: var(--m1);
-    background: url(../../components/nexus_home_bg.png);
+    background: url(../../assets/nexus_home_bg.png);
     background-size: 100vw auto; 
     /* background-repeat: no-repeat;  */
     height: 100%;
-    width: 100vw;
+    width: 100%;
     padding-bottom: 10rem;
 }
 
@@ -26,6 +26,89 @@
     justify-content: center;
     /* max-width: 100%; */
 }
+
+
+.scct-con {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.scc-subtitle {
+    font-size: 5.5vw;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+
+    /* gap: 1rem;
+    justify-content: center; */
+}
+
+.scc-title {
+    font-size: 8.5vw;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.scc-title div {
+    font-size: 8.5vw;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    justify-content: center;
+    background-image: url(../../assets//scct_title_mask.png);
+    background-size: cover;
+    background-attachment: fixed;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.scc-title div {
+    position: relative;
+    /* Ensure the divs can stack */
+    color: white;
+    /* Set text color to make it visible */
+}
+
+.statst-con {
+    display: flex;
+    /* gap: 5rem; */
+    width: 75%;
+    justify-content: space-around;
+}
+
+.stat-item {
+    font-size: 6vw;
+    flex-direction: column;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.stat-item div {
+    background-image: url(../../assets/statst-mask.png);
+    background-size: cover;
+    background-attachment: fixed;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.stat-title {
+    font-size: 2.4vw;
+    flex-direction: column;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    justify-content: space-between;
+}
+
 
 .home-scc {
     max-width: 90vw;
@@ -84,19 +167,19 @@
 #img-stack-item1 {
     width: 80vw;
     top: 3rem;
-    background-image: url(../../components/home-stack-img.jpg);
+    background-image: url(../../assets/home-stack-img.jpg);
 }
 
 #img-stack-item2 {
     width: 85vw;
     top: 6rem;
-    background-image: url(../../components/home-stack-img.jpg);
+    background-image: url(../../assets/home-stack-img.jpg);
 }
 
 #img-stack-item3 {
     width: 90vw;
     top: 9rem;
-    background-image: url(../../components/home-stack-img.jpg);
+    background-image: url(../../assets/home-stack-img.jpg);
 }
 
 .home-testimonials {
@@ -116,9 +199,12 @@
 }
 
 .test-card {
+    position: relative;
+    /* Ensure the pseudo-element is positioned correctly */
     width: 22rem;
     min-height: 16rem;
-    background-color: #f2f2f207;
+    background-color: rgba(242, 242, 242, 0.04);
+    /* Corrected RGBA syntax */
     border-radius: 0.5rem;
     padding: 1.5rem;
     border: 1px solid rgba(255, 255, 255, 0.292);
@@ -126,6 +212,33 @@
     flex-direction: column;
     gap: 1rem;
     justify-content: center;
+    overflow: hidden;
+    /* Ensure the glare doesn't overflow the card */
+    /* Optionally, add a transition for smooth movement */
+    transition: box-shadow 0.3s ease;
+}
+.test-card::before {
+    content: '';
+    position: absolute;
+    top: var(--y, );
+    /* Default position off the card */
+    left: var(--x, );
+    /* Default position off the card */
+    transform: translate(-50%, -50%);
+    background: radial-gradient(var(--b5), transparent, transparent);
+    /* Add radial gradient */
+    width: 25rem;
+    /* Adjust size as needed */
+    height: 25rem;
+    /* Adjust size as needed */
+    transition: 0.2s, top 0s, left 0s;
+    opacity: 0;
+    /* Start hidden */
+}
+
+.test-card:hover::before {
+    opacity: 0.2;
+    /* Show glare on hover */
 }
 
 .quote-i, .quote-i img {
@@ -189,6 +302,21 @@
     /* width: 100%; */
 }
 
+.horizon-head {
+    font-size: 4rem;
+    font-weight: 600;
+    min-width: 35rem;
+}
+
+.highlight-mask {
+    background-image: url(../../assets//scct_title_mask.png);
+    background-size: cover;
+    background-attachment: fixed;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
 .horizon-head img {
     min-width: 35rem;
 
@@ -206,4 +334,79 @@
     width: 70vw;
     margin-left: -5rem;
     cursor: pointer;
+}
+
+@media (max-width: 700px) {
+    .scc-title {
+        flex-direction: column;
+        gap: 0.2vw;
+    }
+
+    .scc-title div {
+        font-size: 15vw;
+        filter: brightness(1.6);
+    }
+
+    .statst-con {
+        justify-content: space-between;
+    }
+
+    .stat-item {
+        font-size: 8vw;
+        filter: brightness(1.4);
+    }
+
+    .test-cards {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .explore-btn {
+        font-size: 2.6vw;
+        padding: 0.4rem 1rem;
+    }
+
+    .home-horizon.section {
+        margin: 0rem auto;
+    }
+
+    .home-horizon-con {
+        height: fit-content;
+    }
+
+    .horizon-head {
+        font-size: 10vw;
+        font-weight: 600;
+    }
+
+    .home-horizon {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .horizon-cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Creates 2 equal columns */
+        gap: 15px; /* Space between grid items */
+        align-items: start; /* Align items vertically at the start */
+        justify-items: stretch; /* Stretch items to fill the grid area */
+    }
+    
+    .horizon-card {
+        width: 43vw;
+        height: 60vw;
+    }
+    /* .horizon-cards {
+        display: none;
+    } */
+
+    .home-beast {
+        width: 85vw;
+        margin: auto;
+        margin-left: -3vw;
+    }
+
+    .home-maincon {
+        padding-bottom: 10vw;
+    }
 }

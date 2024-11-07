@@ -19,7 +19,7 @@
 <body>
     <div class='navbar'>
         <div class="logo">
-            <a href="../onboarding/homepage.html"><span>Nexus</span></a>
+            <a href="../home/homepage.html"><span>Nexus</span></a>
         </div>
         <div class="nav-links">
             <div class="nav-link-items">
@@ -61,43 +61,63 @@
         const clubsDataUrl = '../../data.json';
 
         // Default logo URL
-        const defaultLogo = '../../assets/t.jpg';
+        const defaultLogo = '../../assets/nexus_logo.png';
 
         // Container for the club cards
         const clubCardsContainer = document.querySelector('.clubcards');
+        const searchInput = document.querySelector('.cl-search-text');
+
+        let clubs = []; // To store all clubs data
+
 
         // Fetch and display club data
         async function loadClubData() {
-            try {
-                const response = await fetch(clubsDataUrl);
-                const clubs = await response.json();
-
-                clubs.forEach(club => {
-                    // Create card element
-                    const clubCard = document.createElement('a');
-                    // clubCard.href = "../clubdetails/clubdetails.html";
-                    clubCard.classList.add('tcard', 'idcard');
-
-                    // Create logo and name elements
-                    const logo = club.logo ? club.logo : defaultLogo;
-                    clubCard.innerHTML = `
-                        <a href="../clubdetails/clubdetails.html?clubemail=${club.club_email}">
-                                <div class='club-icon'>
-                            <img src="${logo}" alt="${club.name}">
-                        </div>
-                        <div class="name">
-                            ${club.name}
-                        </div>
-                            </a>
-                    `;
-
-                    // Append card to container
-                    clubCardsContainer.appendChild(clubCard);
-                });
-            } catch (error) {
-                console.error("Error loading club data:", error);
-            }
+        try {
+            const response = await fetch(clubsDataUrl);
+            clubs = await response.json();
+            displayClubs(clubs); // Display all clubs initially
+        } catch (error) {
+            console.error("Error loading club data:", error);
         }
+    }
+
+    // Function to display club cards
+    function displayClubs(clubsToDisplay) {
+        // Clear existing cards
+        clubsToDisplay.sort((a, b) => a.name.localeCompare(b.name));
+        clubCardsContainer.innerHTML = '';
+
+        // Create a card for each club
+        clubsToDisplay.forEach(club => {
+            const clubCard = document.createElement('a');
+            clubCard.href = `../clubdetails/clubdetails.html?clubemail=${club.club_email}`;
+            clubCard.classList.add('tcard', 'idcard');
+
+            // Use the club's logo or a default logo
+            const logo = club.logo ? club.logo : defaultLogo;
+            clubCard.innerHTML = `
+                <div class='club-icon'>
+                    <img src="${logo}" alt="${club.name}">
+                </div>
+                <div class="name">
+                    ${club.name}
+                </div>
+            `;
+
+            // Append the card to the container
+            clubCardsContainer.appendChild(clubCard);
+        });
+    }
+
+        function handleSearch() {
+            const query = searchInput.value.toLowerCase(); // Convert input to lowercase for case-insensitive search
+            const filteredClubs = clubs.filter(club => club.name.toLowerCase().includes(query));
+            displayClubs(filteredClubs); // Display only matching clubs
+        }
+
+        // Add event listener to the search input
+        searchInput.addEventListener('input', handleSearch);
+
 
         // Load data when the page loads
         loadClubData();

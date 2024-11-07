@@ -19,7 +19,7 @@
 <body>
     <div class='navbar'>
         <div class="logo">
-            <a href="../onboarding/homepage.html"><span>Nexus</span></a>
+            <a href="../home/homepage.html"><span>Nexus</span></a>
         </div>
         <div class="nav-links">
             <div class="nav-link-items">
@@ -41,7 +41,7 @@
             <div class='namemotto-con'>
 
                 <div class='title-con'>
-                    <a href="https://acmbmu.com/"><span>ACM</span></a>
+                   <span>ACM</span>
 
                 </div>
 
@@ -63,12 +63,15 @@
 
                 <div class='contacts-con'>
                     <div class='cont-con'>
-                        <div class='phone-con'>
-                            <i class="fa-solid fa-phone git-i"></i>
-                            <span>9999999999</span>
-                        </div>
+                        <a class="phone-a" href="">
+                            <div class='phone-con'>
+                                <i class="fa-solid fa-phone git-i"></i>
+                                <span>9999999999</span>
+                            </div>
+                        </a>
+                 
 
-                        <a href="https://www.instagram.com/acm_bmu/">
+                        <a class="insta-a" href="">
                             <div class='ig-con'>
                                 <i class="fa-brands fa-instagram git-i"></i>
                                 <span>club.bmu</span>
@@ -78,16 +81,16 @@
                     </div>
                     <div class='cont-con'>
 
-                        <a href="mailto:acm@bmu.edu.in">
+                        <a class="email-a" href="">
                             <div class='email-con'>
                                 <i class="fa-solid fa-envelope git-i"></i>
-                                <span>acm@bmu.edu.in</span>
+                                <span></span>
                             </div>
                         </a>
                         <a class="linkedin-a">
                             <div class='email-con'>
                                 <i class="fa-brands fa-linkedin git-i"></i>
-                                <span class="linkedin-s">ACM BMU Student Chapter</span>
+                                <span class="linkedin-s"></span>
                             </div>
                         </a>
 
@@ -150,7 +153,7 @@
 
     <script>
         const clubDetailsUrl = '../../data.json';
-        const defaultLogo = '../../assets/t.png';
+        const defaultLogo = '../../assets/nexus_logo.png';
         
         function getQueryParam(param) {
             const urlParams = new URLSearchParams(window.location.search);
@@ -178,15 +181,17 @@
                 console.log("Club found:", club);
     
                 // Populate HTML elements with club data
+                // document.querySelector('.clubname-a').href = `../clubdetails/clubdetails.html?clubemail=${club.club_email}`;
                 document.querySelector('.logo-con img').src = club.logo || defaultLogo;
                 document.querySelector('.title-con span').textContent = club.name;
-                document.querySelector('.motto-con span').textContent = club.motto;
                 document.querySelector('.phone-con span').textContent = club.phone;
-                document.querySelector('.ig-con span').textContent = club.insta;
-                document.querySelector('a .ig-con').href = club.insta;
+                document.querySelector('.phone-a').href = `tel:${club.phone}`;
+                document.querySelector('.motto-con span').textContent = club.motto;
+                document.querySelector('.ig-con span').textContent = `${club.name}` + " - Instagram";
+                document.querySelector('.insta-a').href = club.insta;
                 document.querySelector('.email-con span').textContent = club.club_email;
-                document.querySelector('a .email-con').href = `mailto:${club.club_email}`;
-                document.querySelector('.linkedin-s').textContent = club.linkedin;
+                document.querySelector('.email-a').href = `mailto:${club.club_email}`;
+                document.querySelector('.linkedin-s').textContent = `${club.name}` + " - LinkedIn";
                 document.querySelector('.linkedin-a').href = club.linkedin;
                 document.querySelector('#about .conttext-con').textContent = club.about;
                 document.querySelector('#whyus .conttext-con').textContent = club.whyus;

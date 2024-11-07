@@ -70,7 +70,20 @@ body {
   user-select: none;         /* Standard syntax */
 }
 
+/* For WebKit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 0.65rem; /* Width of the scrollbar */
+  height: 0.65rem; 
+}
 
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 66, 0.722); /* Color for the scrollbar thumb */
+  /* border-radius: 20px;  */
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(0, 11, 22); /* Completely transparent track color */
+}
 
 /* Base */
 * {
@@ -221,6 +234,8 @@ body {
   border-radius: 0.625rem; /* 10px converted to rem */
   padding: 1.2rem;
   backdrop-filter: blur(4px); /* Background blur of 4px */
+  /* white-space: pre-wrap; */
+  word-wrap: break-word; 
 }
 
 .lbcard {
@@ -346,6 +361,7 @@ body {
   height: 6rem;
   border-radius: 50%; /* Circle */
   object-fit: cover;
+  box-shadow: 0 0 0.779rem rgba(45, 138, 229, 0.3);
 }
 
 .name {

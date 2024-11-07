@@ -12,16 +12,41 @@
 <body>
     <div class='home-maincon'>
         <div class="hero-con section">
-            <div class="scc-con">
-                <img src=../../assets/home-scc.png alt="" class='home-scc' />
+            <div class="scct-con">
+                <div class="scc-subtitle">
+                    <div>Discover, Connect & Thrive.</div>
+                </div>
+                <div class="scc-title">
+                    <div>Student</div>
+                    <div>Club</div>
+                    <div>Culture</div>
+                </div>
             </div>
+
 
             <div class="explore-btn-con">
                 <a class="explore-btn" href='../clublisting/clublisting.html'>Explore</a>
             </div>
 
-            <div class="stats-con">
-                <img src='../../assets/home-stats.png' alt="" class='home-stats section' />
+            <div class="statst-con">
+                <div class="stat-item">
+                    <div class="stat-count">150+</div>
+                    <div class="stat-title">
+                        Events
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-count">26</div>
+                    <div class="stat-title">
+                        Clubs
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-count">1500+</div>
+                    <div class="stat-title">
+                        Participants
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -112,7 +137,9 @@
             <div class="home-horizon section" ref={horizonRef}>
 
                 <div class="horizon-head">
-                    <img src=../../assets/home-horizon-head.png alt="" />
+                    <div>Got Some</div>
+                    <div>Crazy <span class='highlight-mask'>Highlights</span></div>
+                    <div>For You</div>
                 </div>
                 <div class="horizon-cards">
                     <div class="horizon-card">
@@ -140,13 +167,49 @@
         </div>
 
         <div class="home-beast-con section">
-            <a href="https://67thmilestone.bmu.edu.in/"><img src=../../assets/home-beast.png alt="" class='home-beast' /></a>
+            <a href="https://67thmilestone.bmu.edu.in/"><img src=../../assets/home-beast.png alt=""
+                    class='home-beast' /></a>
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const testcards = document.querySelectorAll(".test-card");
+
+            const handleMouseMove = (e) => {
+                const rect = e.currentTarget.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                e.currentTarget.style.setProperty("--x", `${x}px`);
+                e.currentTarget.style.setProperty("--y", `${y}px`);
+            };
+
+            const handleMouseLeave = (e) => {
+                e.currentTarget.style.setProperty("--x", `-100px`);
+                e.currentTarget.style.setProperty("--y", `-100px`);
+            };
+
+            testcards.forEach(testcard => {
+                testcard.addEventListener('mousemove', handleMouseMove);
+                testcard.addEventListener('mouseleave', handleMouseLeave);
+            });
+
+            // Cleanup function to remove event listeners (optional)
+            window.addEventListener("beforeunload", () => {
+                testcards.forEach(testcard => {
+                    testcard.removeEventListener('mousemove', handleMouseMove);
+                    testcard.removeEventListener('mouseleave', handleMouseLeave);
+                });
+            });
+        });
+
+    </script>
+
     <script src="homepage.js"></script>
+
 </body>
 
 </html>
