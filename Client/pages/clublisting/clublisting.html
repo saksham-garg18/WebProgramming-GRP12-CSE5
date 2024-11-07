@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../../components/style.css">
-    <link rel="stylesheet" href="clublisting.css">
+    <link rel="stylesheet" href="../../assets/style.css">
+    <link rel="stylesheet" href="./clublisting.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -53,91 +53,55 @@
 
         <div class='clubcards'>
 
-            <a href="../clubdetails/clubdetails.html">
-                <div class="tcard idcard">
-                    <div class="upcoming"></div>
-                    <div class='club-icon'>
-                        <img src="../../components/t.png" />
-                    </div>
-                    <div class="name">
-                        The Start-up And Entrepreneurship Club
-                    </div>
-                </div>
-            </a>
-            <a href="../clubdetails/clubdetails.html">
-                <div class="tcard idcard">
-                    <div class='club-icon'>
-                        <img src="../../components/t.png" />
-                    </div>
-                    <div class="name">
-                        The Start-up And Entrepreneurship Club
-                    </div>
-                </div>
-            </a>
-            <a href="../clubdetails/clubdetails.html">
-                <div class="tcard idcard">
-                    <div class='club-icon'>
-                        <img src="../../components/t.png" />
-                    </div>
-                    <div class="name">
-                        The Start-up And Entrepreneurship Club
-                    </div>
-                </div>
-            </a>
-            <a href="../clubdetails/clubdetails.html">
-                <div class="tcard idcard">
-                    <div class='club-icon'>
-                        <img src="../../components/t.png" />
-                    </div>
-                    <div class="name">
-                        The Start-up And Entrepreneurship Club
-                    </div>
-                </div>
-            </a>
-            <a href="../clubdetails/clubdetails.html">
-                <div class="tcard idcard">
-                    <div class='club-icon'>
-                        <img src="../../components/t.png" />
-                    </div>
-                    <div class="name">
-                        The Start-up And Entrepreneurship Club
-                    </div>
-                </div>
-            </a>
-            <a href="../clubdetails/clubdetails.html">
-                <div class="tcard idcard">
-                    <div class='club-icon'>
-                        <img src="../../components/t.png" />
-                    </div>
-                    <div class="name">
-                        The Start-up And Entrepreneurship Club
-                    </div>
-                </div>
-            </a>
-            <a href="../clubdetails/clubdetails.html">
-                <div class="tcard idcard">
-                    <div class='club-icon'>
-                        <img src="../../components/t.png" />
-                    </div>
-                    <div class="name">
-                        The Start-up And Entrepreneurship Club
-                    </div>
-                </div>
-            </a>
-            <a href="../clubdetails/clubdetails.html">
-                <div class="tcard idcard">
-                    <div class='club-icon'>
-                        <img src="../../components/t.png" />
-                    </div>
-                    <div class="name">
-                        The Start-up And Entrepreneurship Club
-                    </div>
-                </div>
-            </a>
-
-
         </div>
     </div>
+
+    <script>
+        // Path to your JSON file
+        const clubsDataUrl = '../../data.json';
+
+        // Default logo URL
+        const defaultLogo = '../../assets/t.jpg';
+
+        // Container for the club cards
+        const clubCardsContainer = document.querySelector('.clubcards');
+
+        // Fetch and display club data
+        async function loadClubData() {
+            try {
+                const response = await fetch(clubsDataUrl);
+                const clubs = await response.json();
+
+                clubs.forEach(club => {
+                    // Create card element
+                    const clubCard = document.createElement('a');
+                    // clubCard.href = "../clubdetails/clubdetails.html";
+                    clubCard.classList.add('tcard', 'idcard');
+
+                    // Create logo and name elements
+                    const logo = club.logo ? club.logo : defaultLogo;
+                    clubCard.innerHTML = `
+                        <a href="../clubdetails/clubdetails.html?clubemail=${club.club_email}">
+                                <div class='club-icon'>
+                            <img src="${logo}" alt="${club.name}">
+                        </div>
+                        <div class="name">
+                            ${club.name}
+                        </div>
+                            </a>
+                    `;
+
+                    // Append card to container
+                    clubCardsContainer.appendChild(clubCard);
+                });
+            } catch (error) {
+                console.error("Error loading club data:", error);
+            }
+        }
+
+        // Load data when the page loads
+        loadClubData();
+    </script>
 </body>
 
 </html>

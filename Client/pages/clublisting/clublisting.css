@@ -13,7 +13,7 @@
     gap: 1.5rem;
     margin-top: 2rem;
 }
-
+    
 .idcard:hover{
     scale: 105%;
     border-color: #0084FF;
@@ -55,4 +55,6 @@
 }   
 .upcoming {
     position: relative;
+    height: 7px;
+    width: 7px;
 }
