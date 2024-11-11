@@ -57,43 +57,34 @@
     </div>
 
     <script>
-        // Path to your JSON file
         const clubsDataUrl = '../../data.json';
 
-        // Default logo URL
         const defaultLogo = '../../assets/nexus_logo.png';
 
-        // Container for the club cards
         const clubCardsContainer = document.querySelector('.clubcards');
         const searchInput = document.querySelector('.cl-search-text');
 
-        let clubs = []; // To store all clubs data
+        let clubs = [];
 
-
-        // Fetch and display club data
         async function loadClubData() {
         try {
             const response = await fetch(clubsDataUrl);
             clubs = await response.json();
-            displayClubs(clubs); // Display all clubs initially
+            displayClubs(clubs);
         } catch (error) {
             console.error("Error loading club data:", error);
         }
     }
 
-    // Function to display club cards
     function displayClubs(clubsToDisplay) {
-        // Clear existing cards
         clubsToDisplay.sort((a, b) => a.name.localeCompare(b.name));
         clubCardsContainer.innerHTML = '';
 
-        // Create a card for each club
         clubsToDisplay.forEach(club => {
             const clubCard = document.createElement('a');
             clubCard.href = `../clubdetails/clubdetails.html?clubemail=${club.club_email}`;
             clubCard.classList.add('tcard', 'idcard');
 
-            // Use the club's logo or a default logo
             const logo = club.logo ? club.logo : defaultLogo;
             clubCard.innerHTML = `
                 <div class='club-icon'>
@@ -104,24 +95,19 @@
                 </div>
             `;
 
-            // Append the card to the container
             clubCardsContainer.appendChild(clubCard);
         });
     }
 
         function handleSearch() {
-            const query = searchInput.value.toLowerCase(); // Convert input to lowercase for case-insensitive search
+            const query = searchInput.value.toLowerCase();
             const filteredClubs = clubs.filter(club => club.name.toLowerCase().includes(query));
-            displayClubs(filteredClubs); // Display only matching clubs
+            displayClubs(filteredClubs);
         }
 
-        // Add event listener to the search input
         searchInput.addEventListener('input', handleSearch);
 
-
-        // Load data when the page loads
         loadClubData();
     </script>
 </body>
-
 </html>
