@@ -38,6 +38,7 @@
     font-size: var(--subtitle-font-size);
     /* Adjust the font size for the motto */
     text-align: left;
+    max-width: 60rem;
 }
 
 .eventlist-con {
