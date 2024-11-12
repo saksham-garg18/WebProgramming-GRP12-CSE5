@@ -7,7 +7,7 @@ function getQueryParam(param) {
 }
 
 async function loadClubDetails() {
-    const clubEmail = getQueryParam('clubemail'); 
+    const clubEmail = getQueryParam('clubemail');
     if (!clubEmail) {
         console.error("Club Email not specified in the URL.");
         return;
