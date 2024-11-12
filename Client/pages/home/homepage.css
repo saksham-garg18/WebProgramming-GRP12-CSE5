@@ -161,24 +161,9 @@
     border-radius: 0.8rem;
     box-shadow: 0 0 25px 25px rgba(0, 0, 0, 0.332);
     position: sticky;
-}
-
-#img-stack-item1 {
-    width: 80vw;
-    top: 3rem;
-    background-image: url(../../assets/home-stack-img.jpg);
-}
-
-#img-stack-item2 {
-    width: 85vw;
-    top: 6rem;
-    background-image: url(../../assets/home-stack-img.jpg);
-}
-
-#img-stack-item3 {
-    width: 90vw;
-    top: 9rem;
-    background-image: url(../../assets/home-stack-img.jpg);
+    width: 80%; /* Ensure it spans the full container width */
+    z-index: 1; /* Make sure the images are stacked on top of each other */
+    object-fit: cover;
 }
 
 .home-testimonials {
@@ -287,12 +272,13 @@
 .horizon-card {
     width: 20rem;
     height: 25rem;
-    background-color: azure;
+    /* background-color: azure; */
     border-radius: 0.5rem;
     
 }
 
 .horizon-card img {
+    border-radius: 0.5rem;
     background-size: cover;
     object-fit: cover;
     background-position: center;
