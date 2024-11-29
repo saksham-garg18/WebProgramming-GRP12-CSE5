@@ -161,7 +161,7 @@
     border-radius: 0.8rem;
     box-shadow: 0 0 25px 25px rgba(0, 0, 0, 0.332);
     position: sticky;
-    width: 80%; /* Ensure it spans the full container width */
+    width: 90%; /* Ensure it spans the full container width */
     z-index: 1; /* Make sure the images are stacked on top of each other */
     object-fit: cover;
 }
