@@ -1,25 +1,16 @@
-<% layout("../../boilerplate.ejs"); %>
-<div class="navbar">
-    <div class="logo">
-        <a href="../home/homepage.html"><span>Nexus</span></a>
-    </div>
-    <div class="nav-links">
-        <div class="nav-link-items">
-            <a class="nav-link-item" href="../onboarding/signup/signup.html">Signup</a>
-            <a class="nav-link-item" href="../onboarding/login/login.html">Login</a>
-            <a class="nav-link-item" href="../clublisting/clublisting.html">Clubs</a>
-            <!-- <a class='nav-link-item' href="/clubs">Clubs</a> -->
-        </div>
-        <!-- <div class="nav-link-icons">
-                <i class="nav-icon-item fas fa-bell"></i>
-                <i class="nav-icon-item far fa-user"></i>
-            </div> -->
-    </div>
-</div>
+<link rel="stylesheet" href="/assets/style.css">
+<link rel="stylesheet" href="/clublisting/clublisting.css">
+
 
 <div class="clublisting-maincon">
     <div class="cl-top-con">
-        <div class="cl-title">Clubs</div>
+        <div class="cl-title">Clubs
+            <div>
+                <a href="/create-club">
+                  <button class="mainbtn newbtn"><i class="tag-icon fa-solid fa-circle-plus"></i> Create new</button>
+                </a>
+              </div>
+        </div>
         <div class="cl-searchbox">
             <div class="listicons">
                 <i class="fa-solid fa-magnifying-glass"></i>
@@ -32,4 +23,57 @@
     <div class="clubcards"></div>
 </div>
 
-<script src="clublisting.js"></script>
+<script>
+
+    const clubsDataUrl = '../../data.json';
+
+    const defaultLogo = '../../assets/nexus_logo.png';
+
+    const clubCardsContainer = document.querySelector('.clubcards');
+    const searchInput = document.querySelector('.cl-search-text');
+
+    let clubs = [];
+
+    async function loadClubData() {
+        try {
+            const response = await fetch(clubsDataUrl);
+            clubs = await response.json();
+            displayClubs(clubs);
+        } catch (error) {
+            console.error("Error loading club data:", error);
+        }
+    }
+
+    function displayClubs(clubsToDisplay) {
+        clubsToDisplay.sort((a, b) => a.name.localeCompare(b.name));
+        clubCardsContainer.innerHTML = "";
+
+        clubsToDisplay.forEach(club => {
+            const clubCard = document.createElement('a');
+            clubCard.href = `../clubs/${club.uid}`;
+            clubCard.classList.add('tcard', 'idcard');
+
+            const logo = club.logo ? club.logo : defaultLogo;
+            clubCard.innerHTML = `
+        <div class='club-icon'>
+            <img src="${logo}" alt="${club.name}">
+        </div>
+        <div class="name">
+            ${club.name}
+        </div>
+    `;
+
+            clubCardsContainer.appendChild(clubCard);
+        });
+    }
+
+    function handleSearch() {
+        const query = searchInput.value.toLowerCase();
+        const filteredClubs = clubs.filter(club => club.name.toLowerCase().includes(query));
+        displayClubs(filteredClubs);
+    }
+
+    searchInput.addEventListener('input', handleSearch);
+
+    loadClubData();
+</script>

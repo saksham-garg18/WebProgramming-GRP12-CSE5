@@ -2,6 +2,9 @@ const mongoose = require('mongoose');
 const { isURL, isEmail } = require('validator');
 
 const clubSchema = new mongoose.Schema({
+    uid: {
+        type: Number,
+    },
     name: {
         type: String,
         required: true,
@@ -12,10 +15,6 @@ const clubSchema = new mongoose.Schema({
     },
     logo: {
         type: String,
-        validate: {
-            validator: isURL,
-            message: 'Invalid URL format for logo.',
-        },
         default: 'https://res.cloudinary.com/deuv3jnzu/image/upload/v1728713962/nexus_logo_u4nuqu.png',
     },
     about: {
@@ -48,7 +47,7 @@ const clubSchema = new mongoose.Schema({
             validator: (value) => /^.+@(bmu|bml)\.edu\.in$/.test(value),
             message: 'Email must be a valid @bmu.edu.in or @bml.edu.in email address.',
         },
-    },    
+    },
     phone: {
         type: String,
     },

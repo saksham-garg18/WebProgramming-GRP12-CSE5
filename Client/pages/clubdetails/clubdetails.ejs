@@ -1,13 +1,5 @@
-<div class="navbar">
-    <div class="logo">
-        <a href="../home/homepage.html"><span>Nexus</span></a>
-    </div>
-    <div class="nav-links">
-        <div class="nav-link-items">
-            <a class="nav-link-item" href="../clublisting/clublisting.html">Clubs</a>
-        </div>
-    </div>
-</div>
+<link rel="stylesheet" href="/assets/style.css">
+<link rel="stylesheet" href="/clubdetails/clubdetails.css">
 
 <div class="clubdeets-maincon section2">
     <div class="deets-con section2">
@@ -17,11 +9,11 @@
 
         <div class="namemotto-con">
             <div class="title-con">
-                <span>ACM</span>
+                <span><%= club.name %></span>
             </div>
 
             <div class="motto-con">
-                <span>Advancing Computing as a Science & Profession</span>
+                <span><%= club.motto %></span>
             </div>
         </div>
     </div>
@@ -35,28 +27,29 @@
                     <a class="phone-a" href="">
                         <div class="phone-con">
                             <i class="fa-solid fa-phone git-i"></i>
-                            <span>9999999999</span>
+                            <span><%= club.phone %></span>
                         </div>
                     </a>
 
-                    <a class="insta-a" href="">
+                    <a class="insta-a" href="<%= club.insta %>">
                         <div class="ig-con">
                             <i class="fa-brands fa-instagram git-i"></i>
-                            <span>club.bmu</span>
+                         <span><%= club.name %></span>
                         </div>
                     </a>
                 </div>
                 <div class="cont-con">
-                    <a class="email-a" href="">
+                    <a class="email-a" href="mailto:<%= club.club_email %>">
                         <div class="email-con">
                             <i class="fa-solid fa-envelope git-i"></i>
-                            <span></span>
+                            <span><%= club.club_email %></span>
                         </div>
                     </a>
-                    <a class="linkedin-a">
+                    <a class="linkedin-a" href="<%= club.linkedin %>">
                         <div class="email-con">
                             <i class="fa-brands fa-linkedin git-i"></i>
-                            <span class="linkedin-s"></span>
+                            <span class="linkedin-s"><%= club.name %></span>
+                            
                         </div>
                     </a>
                 </div>
@@ -83,8 +76,7 @@
             <span>About</span>
         </div>
         <div class="conttext-con">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod,
-            consectetur.
+            <%= club.about %>
         </div>
     </div>
 
@@ -94,8 +86,7 @@
                 <span>Why us?</span>
             </div>
             <div class="conttext-con">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores,
-                alias.
+              <%= club.whyus %>
             </div>
         </div>
 
@@ -104,11 +95,10 @@
                 <span>Milestones</span>
             </div>
             <div class="conttext-con">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe,
-                assumenda!
+                <%= club.milestones %>
             </div>
         </div>
     </div>
 </div>
 
-<script src="clubdetails.js"></script>
+<!-- <script src="clubdetails.js"></script> -->
