@@ -2,8 +2,21 @@
 const express = require('express');
 const path = require('path');
 const exphbs = require('express-handlebars');
+const Club = require('../Server/club.model.js');
 const app = express();
 const PORT = process.env.PORT || 3000;
+require('dotenv').config();
+const mongoose = require('mongoose');
+
+// connect DB
+const connectDB = async () => {
+    try {
+        await mongoose.connect(process.env.MONGO_URI);
+        console.log('Connected to MongoDB');
+    } catch (error) {
+        console.error('Error connecting to MongoDB:', error.message);
+    }
+};
 
 // Handlebars configuration
 const hbs = exphbs.create({
@@ -20,7 +33,7 @@ app.set('views', path.join(__dirname, 'Client/pages'));
 // Configure EJS
 app.engine('ejs', require('ejs').renderFile);
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'Client/pages'));
+app.set('views', path.join(__dirname, '../Client/pages'));
 
 // Middleware
 app.use(express.static(path.join(__dirname, 'Client')));
@@ -29,10 +42,15 @@ app.use(express.static(path.join(__dirname, 'Client')));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// GET - Home
+app.get('/', (req, res) => {
+    res.render('home');
+});
+
 // GET - Clubs
 app.get('/clubs', async (req, res) => {
     const clubs = await Club.find({});
-    res.status(200).json(clubs)
+    res.render(('clublisting/clublisting.ejs'));
 });
 
 // GET - Club Details
@@ -107,3 +125,5 @@ app.delete('/clubs/:id', async (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}/`);
 });
+
+connectDB();
