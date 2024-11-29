@@ -4,6 +4,7 @@
 
 .cl-top-con {
     display: flex;
+    align-items: center;
     justify-content: space-between;
 }
 
@@ -23,6 +24,9 @@
 .cl-title {
     font-size: var(--subtitle-font-size);
     font-weight: 600;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
 }
 
 .cl-searchbox {
