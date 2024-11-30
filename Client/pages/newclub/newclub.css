@@ -1,0 +1,32 @@
+.newclub-maincon {
+    margin: auto;
+    margin-top: 2rem;
+}
+
+.newclub-maincon form input, textarea {
+    background-color: aliceblue;
+    border-radius: 0.2rem;
+    margin: 0.3rem 0 1rem 0;
+    padding: 0.5rem 0.7rem;
+    font-size: 0.8rem;
+}
+
+.newclub-maincon form input {
+    color: black;
+
+}
+.newclub-maincon form input:focus {
+    background-color: aliceblue !important;
+    color: black;
+    
+}
+
+.form-control {
+    border-radius: 0.2rem;
+    background-color: aliceblue;
+    font-size: 0.8rem;
+}
+.form-control:focus {
+    background-color: aliceblue;
+}
+

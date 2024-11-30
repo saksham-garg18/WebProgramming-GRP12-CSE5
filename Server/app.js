@@ -2,6 +2,7 @@
 const express = require('express');
 const path = require('path');
 const exphbs = require('express-handlebars');
+
 const ejsLayouts = require('express-ejs-layouts');
 const Club = require('../Server/club.model.js');
 const app = express();
@@ -29,7 +30,7 @@ const hbs = exphbs.create({
 // Set up Handlebars
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
-app.set('views', path.join(__dirname, '../Client/hbs'));
+app.set('views2', path.join(__dirname, '../Client/hbs'));
 
 // Configure EJS
 app.engine('ejs', require('ejs').renderFile);
@@ -44,19 +45,20 @@ app.use(ejsLayouts);
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// GET - Home
-app.get('/', (req, res) => {
-    res.render('home');
+// GET - Home using Handlebars
+app.get('/', async (req, res) => {
+    res.render('homepage');
 });
+
 
 // Get - Login
 app.get('/login', (req, res) => {
-    res.render('onboarding/login/login.ejs', {layout: 'boilerplate'});
+    res.render('onboarding/login/login.ejs', { layout: 'boilerplate' });
 });
 
 // Get - Signup
 app.get('/signup', (req, res) => {
-    res.render('onboarding/signup/signup.ejs', {layout: 'boilerplate'});
+    res.render('onboarding/signup/signup.ejs', { layout: 'boilerplate' });
 });
 
 // GET - Clubs
@@ -85,6 +87,33 @@ app.get('/clubs/:uid', async (req, res) => {
         res.status(500).json({ message: 'Server error' });
     }
 });
+
+// GET - Club Details
+app.get('/edit-club/:uid', async (req, res) => {
+    console.log('Received request to fetch club with ID:', req.params.uid);
+
+    try {
+        const club = await Club.findOne({ uid: req.params.uid });
+
+        if (!club) {
+            console.error('Club not found for ID:', req.params.uid);
+            return res.status(404).json({ message: 'Club not found' });
+        }
+
+        console.log('Fetched club data:', JSON.stringify(club, null, 2));
+
+        res.render('editclub/editclub.ejs', { layout: 'boilerplate', club });
+    } catch (error) {
+        console.error('Error fetching club data:', error.message);
+        res.status(500).json({ message: 'Server error' });
+    }
+});
+
+// GET - Club Details
+app.get('/create-club', async (req, res) => {
+        res.render('newclub/newclub.ejs', { layout: 'boilerplate'});
+    }
+);
 
 // POST - Create club
 app.post('/create-club', async (req, res) => {

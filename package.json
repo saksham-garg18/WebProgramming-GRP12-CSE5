@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "express-ejs-layouts": "^2.5.1"
+    "express-ejs-layouts": "^2.5.1",
+    "hbs": "^4.2.0"
   }
 }

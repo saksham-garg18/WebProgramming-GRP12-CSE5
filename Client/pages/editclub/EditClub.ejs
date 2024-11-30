@@ -1,0 +1,93 @@
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="'../newclub/newclub.css'">
+
+<div class="newclub-maincon section">
+    <h2>Edit Club Details</h2>
+
+    <form onSubmit={handleSubmit} class='needs-validation' noValidate>
+        <div class="row">
+            <div class="form-group col-12 col-md-4">
+                <label htmlFor="logo">Logo</label>
+                <input type="file" id="logo" class="form-control" onChange={handleChange} accept='image/*' required />
+                <div id="logo" class="invalid-feedback">
+                    Please choose a logo.
+                </div>
+            </div>
+            <div class="form-group col-12 col-md-4">
+                <label htmlFor="name">Name</label>
+                <input type="text" id="name" class="form-control" value={formData.name} onChange={handleChange}
+                    required />
+                <div id="name" class="invalid-feedback">
+                    Please choose a name.
+                </div>
+            </div>
+            <div class="form-group col-12 col-md-4">
+                <label htmlFor="motto">Motto</label>
+                <input type="text" id="motto" class="form-control" value={formData.motto} onChange={handleChange}
+                    required />
+            </div>
+        </div>
+        <div class="form-group">
+            <label htmlFor="about">About</label>
+            <textarea id="about" rows="3" class="form-control" value={formData.about} onChange={handleChange}
+                required></textarea>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <label htmlFor="whyus">Why Us</label>
+                <textarea id="whyus" rows="5" class="form-control" value={formData.whyus} onChange={handleChange}
+                    required></textarea>
+            </div>
+            <div class="col-12 col-md-6">
+                <label htmlFor="milestones">Milestones</label>
+                <textarea id="milestones" rows="5" class="form-control" value={formData.milestones}
+                    onChange={handleChange} required></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <label htmlFor="president_email">President's Email</label>
+                <input type="email" id="president_email" class="form-control" placeholder="President's Email"
+                    value={formData.president_email} onChange={handleChange} required />
+            </div>
+            <div class="col-12 col-md-6">
+                <label htmlFor="vp_email">Vice-President's Email</label>
+                <input type="email" id="vp_email" class="form-control" placeholder="Vice-President's Email"
+                    value={formData.vp_email} onChange={handleChange} required />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <label htmlFor="club_email">Club's Email</label>
+                <input type="email" id="club_email" class="form-control" placeholder="Club Email"
+                    value={formData.club_email} onChange={handleChange} // required />
+            </div>
+            <div class="col-12 col-md-6">
+                <label htmlFor="phone">Contact Number</label>
+                <input type="text" id="phone" class="form-control" placeholder="Phone" value={formData.phone}
+                    onChange={handleChange} // required />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-4">
+                <label htmlFor="insta">Instagram</label>
+                <input type="text" id="insta" class="form-control" placeholder="Instagram Username"
+                    value={formData.insta} onChange={handleChange} // required />
+            </div>
+            <div class="col-12 col-md-4">
+                <label htmlFor="linkedin">LinkedIn</label>
+                <input type="text" id="linkedin" class="form-control" placeholder="LinkedIn Username"
+                    value={formData.linkedin} onChange={handleChange} // required />
+            </div>
+            <div class="col-12 col-md-4">
+                <label htmlFor="website">Website</label>
+                <input type="text" id="website" class="form-control" placeholder="Website URL" value={formData.website}
+                    onChange={handleChange} // required />
+            </div>
+        </div>
+
+        <hr />
+        <button type="submit" class="btn btn-success mt-3 mb-5">Update</button>
+    </form>
+</div>
+    
