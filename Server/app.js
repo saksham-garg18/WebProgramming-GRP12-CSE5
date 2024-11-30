@@ -134,6 +134,7 @@ app.delete('/clubs/:id', async (req, res) => {
     }
 
     res.json({ message: 'Club deleted successfully' });
+    res.redirect('/clubs');
 });
 
 app.post('/bhtsaare', async (req, res) => {
@@ -154,6 +155,7 @@ app.post('/bhtsaare', async (req, res) => {
         res.status(400).json({ message: error.message });
     }
 });
+
 
 // USER ROUTES --------------------------------->
 
