@@ -64,29 +64,49 @@ app.get('/clubs', async (req, res) => {
 
 // GET - Club Details
 app.get('/clubs/:uid', async (req, res) => {
-    console.log('Received request to fetch club with ID:', req.params.uid);
-
+    // console.log('Received request to fetch club with ID:', req.params.uid);
+    
     try {
         const club = await Club.findOne({ uid: req.params.uid });
-
+        
         if (!club) {
             console.error('Club not found for ID:', req.params.uid);
             return res.status(404).json({ message: 'Club not found' });
         }
-
-        console.log('Fetched club data:', JSON.stringify(club, null, 2));
-
+        
+        // console.log('Fetched club data:', JSON.stringify(club, null, 2));
+        
         res.render('clubdetails/clubdetails.ejs', { layout: 'boilerplate', club });
+        // res.send(club);
+    } catch (error) {
+        console.error('Error fetching club data:', error.message);
+        res.status(500).json({ message: 'Server error' });
+    }
+});
+app.get('/club/:uid', async (req, res) => {
+    // console.log('Received request to fetch club with ID:', req.params.uid);
+    
+    try {
+        const club = await Club.findOne({ uid: req.params.uid });
+        
+        if (!club) {
+            console.error('Club not found for ID:', req.params.uid);
+            return res.status(404).json({ message: 'Club not found' });
+        }
+        
+        // console.log('Fetched club data:', JSON.stringify(club, null, 2));
+        
+        res.send(club);
     } catch (error) {
         console.error('Error fetching club data:', error.message);
         res.status(500).json({ message: 'Server error' });
     }
 });
 
-// GET - Club Details
+// EDIT - Club Details
 app.get('/edit-club/:uid', async (req, res) => {
     console.log('Received request to fetch club with ID:', req.params.uid);
-
+    
     try {
         const club = await Club.findOne({ uid: req.params.uid });
 
@@ -114,6 +134,7 @@ app.get('/create-club', async (req, res) => {
 app.post('/create-club', async (req, res) => {
     console.log('Received request:', req.body);
 
+
     const newClub = new Club({
         ...req.body,
     });
@@ -127,12 +148,12 @@ app.post('/create-club', async (req, res) => {
 });
 
 // POST - Edit club
-app.post('/clubs/:id', async (req, res) => {
-    const { id } = req.params;
+app.post('/clubs/:uid', async (req, res) => {
+    const { uid } = req.params;
     console.log(req.body);
 
     // Find the existing club
-    const club = await Club.findById(id);
+    const club = await Club.findOne({uid: uid});
     if (!club) {
         return res.status(404).json({ message: 'Club not found' });
     }
@@ -141,25 +162,21 @@ app.post('/clubs/:id', async (req, res) => {
         ...req.body,
     };
 
-    const updatedClub = await Club.findByIdAndUpdate(id, updatedData, { new: true, runValidators: true });
+    const updatedClub = await Club.findOneAndUpdate({ uid }, updatedData, { new: true, runValidators: true });
 
     res.json(updatedClub);
 });
 
 // DELETE - Delete club
-app.delete('/clubs/:id', async (req, res) => {
-    const club = await Club.findByIdAndDelete(req.params.id);
-
-    if (!club) {
-        return res.status(404).json({ message: 'Club not found' });
-    }
-
-    res.json({ message: 'Club deleted successfully' });
+app.delete('/clubs/:uid', async (req, res) => {
+    console.log("Received request to delete club with ID:", req.params.uid);
+    await Club.deleteOne({uid: req.params.uid});
     res.redirect('/clubs');
+    console.log("Club deleted successfully");
 });
 
 app.post('/bhtsaare', async (req, res) => {
-    console.log('Received request:', req.body);
+    // console.log('Received request:', req.body);
 
     const clubsData = req.body; // Assuming clubs are passed as an array in req.body.clubs
 

@@ -2,92 +2,117 @@
 <link rel="stylesheet" href="./newclub.css">
 
 <div class="newclub-maincon section">
-    <h2>Enter Club Details</h2>
+    <h2>Create Club</h2>
 
-    <form onSubmit={handleSubmit} class='needs-validation' noValidate>
+    <form id="createClubForm" class="needs-validation" novalidate>
         <div class="row">
             <div class="form-group col-12 col-md-4">
-                <label htmlFor="logo">Logo</label>
-                <input type="file" id="logo" class="form-control" onChange={handleChange} accept='image/*' required />
-                <div id="logo" class="invalid-feedback">
+                <label for="logo">Logo</label>
+                <input type="text" id="logo" class="form-control" name="logo" required />
+                <div id="logo-feedback" class="invalid-feedback">
                     Please choose a logo.
                 </div>
             </div>
             <div class="form-group col-12 col-md-4">
-                <label htmlFor="name">Name</label>
-                <input type="text" id="name" class="form-control" value={formData.name} onChange={handleChange}
-                    required />
-                <div id="name" class="invalid-feedback">
+                <label for="name">Name</label>
+                <input type="text" id="name" class="form-control" name="name" required />
+                <div id="name-feedback" class="invalid-feedback">
                     Please choose a name.
                 </div>
             </div>
             <div class="form-group col-12 col-md-4">
-                <label htmlFor="motto">Motto</label>
-                <input type="text" id="motto" class="form-control" value={formData.motto} onChange={handleChange}
-                    required />
+                <label for="motto">Motto</label>
+                <input type="text" id="motto" class="form-control" name="motto" required />
             </div>
         </div>
         <div class="form-group">
-            <label htmlFor="about">About</label>
-            <textarea id="about" rows="3" class="form-control" value={formData.about} onChange={handleChange}
-                required></textarea>
+            <label for="about">About</label>
+            <textarea id="about" rows="3" class="form-control" name="about" required></textarea>
         </div>
         <div class="row">
             <div class="col-12 col-md-6">
-                <label htmlFor="whyus">Why Us</label>
-                <textarea id="whyus" rows="5" class="form-control" value={formData.whyus} onChange={handleChange}
-                    required></textarea>
+                <label for="whyus">Why Us</label>
+                <textarea id="whyus" rows="5" class="form-control" name="whyus" required></textarea>
             </div>
             <div class="col-12 col-md-6">
-                <label htmlFor="milestones">Milestones</label>
-                <textarea id="milestones" rows="5" class="form-control" value={formData.milestones}
-                    onChange={handleChange} required></textarea>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 col-md-6">
-                <label htmlFor="president_email">President's Email</label>
-                <input type="email" id="president_email" class="form-control" placeholder="President's Email"
-                    value={formData.president_email} onChange={handleChange} required />
-            </div>
-            <div class="col-12 col-md-6">
-                <label htmlFor="vp_email">Vice-President's Email</label>
-                <input type="email" id="vp_email" class="form-control" placeholder="Vice-President's Email"
-                    value={formData.vp_email} onChange={handleChange} required />
+                <label for="milestones">Milestones</label>
+                <textarea id="milestones" rows="5" class="form-control" required name="milestones"></textarea>
             </div>
         </div>
         <div class="row">
             <div class="col-12 col-md-6">
-                <label htmlFor="club_email">Club's Email</label>
-                <input type="email" id="club_email" class="form-control" placeholder="Club Email"
-                    value={formData.club_email} onChange={handleChange} // required />
+                <label for="president_email">President's Email</label>
+                <input type="email" id="president_email" class="form-control" placeholder="President's Email" required name="president_email" />
             </div>
             <div class="col-12 col-md-6">
-                <label htmlFor="phone">Contact Number</label>
-                <input type="text" id="phone" class="form-control" placeholder="Phone" value={formData.phone}
-                    onChange={handleChange} // required />
+                <label for="vp_email">Vice-President's Email</label>
+                <input type="email" id="vp_email" class="form-control" placeholder="Vice-President's Email" required name="vp_email" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <label for="club_email">Club's Email</label>
+                <input type="email" id="club_email" class="form-control" placeholder="Club Email" required name="club_email" />
+            </div>
+            <div class="col-12 col-md-6">
+                <label for="phone">Contact Number</label>
+                <input type="text" id="phone" class="form-control" placeholder="Phone" required name="phone" />
             </div>
         </div>
         <div class="row">
             <div class="col-12 col-md-4">
-                <label htmlFor="insta">Instagram</label>
-                <input type="text" id="insta" class="form-control" placeholder="Instagram Username"
-                    value={formData.insta} onChange={handleChange} // required />
+                <label for="insta">Instagram</label>
+                <input type="text" id="insta" class="form-control" placeholder="Instagram Username" required name="insta" />
             </div>
             <div class="col-12 col-md-4">
-                <label htmlFor="linkedin">LinkedIn</label>
-                <input type="text" id="linkedin" class="form-control" placeholder="LinkedIn Username"
-                    value={formData.linkedin} onChange={handleChange} // required />
+                <label for="linkedin">LinkedIn</label>
+                <input type="text" id="linkedin" class="form-control" placeholder="LinkedIn Username" required name="linkedin" />
             </div>
             <div class="col-12 col-md-4">
-                <label htmlFor="website">Website</label>
-                <input type="text" id="website" class="form-control" placeholder="Website URL" value={formData.website}
-                    onChange={handleChange} // required />
+                <label for="website">Website</label>
+                <input type="text" id="website" class="form-control" placeholder="Website URL" required name="website" />
             </div>
         </div>
 
         <hr />
-        <button type="submit" class="btn btn-success mt-3 mb-5">Update</button>
+        <button type="submit" class="btn btn-success mt-3 mb-5">Create Club</button>
     </form>
 </div>
-    
+
+<script>
+    document.getElementById('createClubForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+        const form = this;
+        
+        const formData = new FormData(form);
+
+        // Debugging the form data
+        for (let [key, value] of formData.entries()) {
+            console.log(key + ": " + value);
+        }
+
+        fetch('/create-club', {
+            method: 'POST',
+            body: JSON.stringify(Object.fromEntries(formData.entries())),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.error) {
+                console.error(data.error);
+            } else {
+                console.log('Club created successfully:', data);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    });
+</script>

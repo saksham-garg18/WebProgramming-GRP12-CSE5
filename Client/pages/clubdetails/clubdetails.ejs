@@ -113,43 +113,19 @@
 </div>
 
 <script>
-    // Function to handle the delete API call
     function deleteClub(uid) {
-        // Confirm with the user before deleting
-        const confirmation = confirm("Are you sure you want to delete this club?");
-        if (!confirmation) {
-            return; // Don't delete if the user cancels
-        }
-
-        // Send DELETE request to the server
+        console.log(`Deleting club with ID: ${uid}`);
         fetch(`/clubs/${uid}`, {
             method: 'DELETE',
-            headers: {
-                'Content-Type': 'application/json',
-            }
         })
-        .then(response => {
-            if (response.ok) {
-                alert("Club deleted successfully.");
-                // Optionally, redirect to another page or remove the club details from the page
-                window.location.href = "/clubs"; // or use location.reload() to reload the page
-            } else {
-                alert("Error deleting club. Please try again.");
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert("Error deleting club. Please try again.");
-        });
+        window.location.href = "/clubs"; 
     }
 
-    // Attach delete function to the delete button
     document.addEventListener('DOMContentLoaded', () => {
         const deleteBtn = document.querySelector('.delete-btn-link');
         if (deleteBtn) {
             deleteBtn.addEventListener('click', () => {
-                // Replace `club.id` with the actual club ID, dynamically inserted into your HTML
-                deleteClub('<%= club.uid %>'); // This is an example using EJS templating
+                deleteClub('<%= club.uid %>'); 
             });
         }
     });

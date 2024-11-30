@@ -28,25 +28,13 @@ const clubSchema = new mongoose.Schema({
     president_email: {
         type: String,
         required: true,
-        validate: {
-            validator: (value) => /^.+@(bmu|bml)\.edu\.in$/.test(value),
-            message: 'Email must be a valid @bmu.edu.in or @bml.edu.in email address.',
-        },
     },
     vp_email: {
         type: String,
         required: true,
-        validate: {
-            validator: (value) => /^.+@(bmu|bml)\.edu\.in$/.test(value),
-            message: 'Email must be a valid @bmu.edu.in or @bml.edu.in email address.',
-        },
     },
     club_email: {
         type: String,
-        validate: {
-            validator: (value) => /^.+@(bmu|bml)\.edu\.in$/.test(value),
-            message: 'Email must be a valid @bmu.edu.in or @bml.edu.in email address.',
-        },
     },
     phone: {
         type: String,

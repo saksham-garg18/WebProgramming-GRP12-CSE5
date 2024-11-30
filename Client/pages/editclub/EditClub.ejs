@@ -1,88 +1,76 @@
 <link rel="stylesheet" href="../assets/style.css">
-<link rel="stylesheet" href="'../newclub/newclub.css'">
+<link rel="stylesheet" href="../newclub/newclub.css">
 
 <div class="newclub-maincon section">
     <h2>Edit Club Details</h2>
 
-    <form onSubmit={handleSubmit} class='needs-validation' noValidate>
+    <form id="editClubForm" class="needs-validation" novalidate>
         <div class="row">
             <div class="form-group col-12 col-md-4">
                 <label htmlFor="logo">Logo</label>
-                <input type="file" id="logo" class="form-control" onChange={handleChange} accept='image/*' required />
-                <div id="logo" class="invalid-feedback">
+                <input type="file" id="logo" class="form-control" accept='image/*' required />
+                <div id="logo-feedback" class="invalid-feedback">
                     Please choose a logo.
                 </div>
             </div>
             <div class="form-group col-12 col-md-4">
                 <label htmlFor="name">Name</label>
-                <input type="text" id="name" class="form-control" value={formData.name} onChange={handleChange}
-                    required />
-                <div id="name" class="invalid-feedback">
+                <input type="text" id="name" class="form-control" required />
+                <div id="name-feedback" class="invalid-feedback">
                     Please choose a name.
                 </div>
             </div>
             <div class="form-group col-12 col-md-4">
                 <label htmlFor="motto">Motto</label>
-                <input type="text" id="motto" class="form-control" value={formData.motto} onChange={handleChange}
-                    required />
+                <input type="text" id="motto" class="form-control" required />
             </div>
         </div>
         <div class="form-group">
             <label htmlFor="about">About</label>
-            <textarea id="about" rows="3" class="form-control" value={formData.about} onChange={handleChange}
-                required></textarea>
+            <textarea id="about" rows="3" class="form-control" required></textarea>
         </div>
         <div class="row">
             <div class="col-12 col-md-6">
                 <label htmlFor="whyus">Why Us</label>
-                <textarea id="whyus" rows="5" class="form-control" value={formData.whyus} onChange={handleChange}
-                    required></textarea>
+                <textarea id="whyus" rows="5" class="form-control" required></textarea>
             </div>
             <div class="col-12 col-md-6">
                 <label htmlFor="milestones">Milestones</label>
-                <textarea id="milestones" rows="5" class="form-control" value={formData.milestones}
-                    onChange={handleChange} required></textarea>
+                <textarea id="milestones" rows="5" class="form-control" required></textarea>
             </div>
         </div>
         <div class="row">
             <div class="col-12 col-md-6">
                 <label htmlFor="president_email">President's Email</label>
-                <input type="email" id="president_email" class="form-control" placeholder="President's Email"
-                    value={formData.president_email} onChange={handleChange} required />
+                <input type="email" id="president_email" class="form-control" placeholder="President's Email" required />
             </div>
             <div class="col-12 col-md-6">
                 <label htmlFor="vp_email">Vice-President's Email</label>
-                <input type="email" id="vp_email" class="form-control" placeholder="Vice-President's Email"
-                    value={formData.vp_email} onChange={handleChange} required />
+                <input type="email" id="vp_email" class="form-control" placeholder="Vice-President's Email" required />
             </div>
         </div>
         <div class="row">
             <div class="col-12 col-md-6">
                 <label htmlFor="club_email">Club's Email</label>
-                <input type="email" id="club_email" class="form-control" placeholder="Club Email"
-                    value={formData.club_email} onChange={handleChange} // required />
+                <input type="email" id="club_email" class="form-control" placeholder="Club Email" required />
             </div>
             <div class="col-12 col-md-6">
                 <label htmlFor="phone">Contact Number</label>
-                <input type="text" id="phone" class="form-control" placeholder="Phone" value={formData.phone}
-                    onChange={handleChange} // required />
+                <input type="text" id="phone" class="form-control" placeholder="Phone" required />
             </div>
         </div>
         <div class="row">
             <div class="col-12 col-md-4">
                 <label htmlFor="insta">Instagram</label>
-                <input type="text" id="insta" class="form-control" placeholder="Instagram Username"
-                    value={formData.insta} onChange={handleChange} // required />
+                <input type="text" id="insta" class="form-control" placeholder="Instagram Username" required />
             </div>
             <div class="col-12 col-md-4">
                 <label htmlFor="linkedin">LinkedIn</label>
-                <input type="text" id="linkedin" class="form-control" placeholder="LinkedIn Username"
-                    value={formData.linkedin} onChange={handleChange} // required />
+                <input type="text" id="linkedin" class="form-control" placeholder="LinkedIn Username" required />
             </div>
             <div class="col-12 col-md-4">
                 <label htmlFor="website">Website</label>
-                <input type="text" id="website" class="form-control" placeholder="Website URL" value={formData.website}
-                    onChange={handleChange} // required />
+                <input type="text" id="website" class="form-control" placeholder="Website URL" required />
             </div>
         </div>
 
@@ -90,4 +78,94 @@
         <button type="submit" class="btn btn-success mt-3 mb-5">Update</button>
     </form>
 </div>
-    
+
+<script>
+    // Extract the 'uid' from the URL path (assuming the URL is of the form /edit-club/:uid)
+    const pathParts = window.location.pathname.split('/');
+    const uid = pathParts[pathParts.length - 1];  // Get the last part of the URL
+    console.log('CLUB KI id YE RI:', uid);  // Log to check if the club ID is correct
+
+    // If the club ID exists, fetch the club data
+    if (uid) {
+        fetch(`/club/${uid}`)
+            .then(response => {
+                console.log('RESPONSE KA STATUS IDHAR HAI:', response);  // Log the response status
+                return response.json();
+            })
+            .then(data => {
+                console.log('DATA JO FETCH HUA HAI YAHAN H:', data); // Log the fetched data
+
+                // Check if the data is available
+                if (data) {
+                    populateForm(data);  // Call the function to populate the form
+                } else {
+                    console.error('No data found for this UID');
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching club data:', error);
+            });
+    }
+
+    // Function to populate the form fields with the fetched data
+    function populateForm(data) {
+        document.getElementById('name').value = data.name || '';
+        document.getElementById('motto').value = data.motto || '';
+        document.getElementById('about').value = data.about || '';
+        document.getElementById('whyus').value = data.whyus || '';
+        document.getElementById('milestones').value = data.milestones || '';
+        document.getElementById('president_email').value = data.president_email || '';
+        document.getElementById('vp_email').value = data.vp_email || '';
+        document.getElementById('club_email').value = data.club_email || '';
+        document.getElementById('phone').value = data.phone || '';
+        document.getElementById('insta').value = data.insta || '';
+        document.getElementById('linkedin').value = data.linkedin || '';
+        document.getElementById('website').value = data.website || '';
+    }
+
+    // Handle form submission
+    document.getElementById('editClubForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const form = this;
+
+        // Manually collect the form data into an object
+        const formData = {
+            name: document.getElementById('name').value,
+            logo: document.getElementById('logo').value,
+            motto: document.getElementById('motto').value,
+            about: document.getElementById('about').value,
+            whyus: document.getElementById('whyus').value,
+            milestones: document.getElementById('milestones').value,
+            president_email: document.getElementById('president_email').value,
+            vp_email: document.getElementById('vp_email').value,
+            club_email: document.getElementById('club_email').value,
+            phone: document.getElementById('phone').value,
+            insta: document.getElementById('insta').value,
+            linkedin: document.getElementById('linkedin').value,
+            website: document.getElementById('website').value
+        };
+
+        // Debugging the collected data
+        console.log("Form Data to Submit:", formData);
+
+        // Send the data to the server with the club ID
+        fetch(`/clubs/${uid}`, {
+            method: 'POST',
+            body: JSON.stringify(formData),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        // .then(data => {
+        //     if (data.error) {
+        //         console.error(data.error);
+        //     } else {
+        //         console.log('Club updated successfully:', data);
+        //     }
+        // })
+        // .catch(error => {
+        //     console.error('Error:', error);
+        // });
+    });
+</script>

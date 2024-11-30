@@ -4,7 +4,7 @@ const path = require('path');
 const exphbs = require('express-handlebars');
 
 const ejsLayouts = require('express-ejs-layouts');
-const Club = require('../Server/club.model.js');
+const Club = require('../Server/models/club.model.js');
 const app = express();
 const PORT = process.env.PORT || 3001;
 require('dotenv').config();
