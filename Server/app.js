@@ -52,6 +52,16 @@ app.get('/', (req, res) => {
 
 // CLUB ROUTES --------------------------------->
 
+// Get - Login
+app.get('/login', (req, res) => {
+    res.render('onboarding/login/login.ejs', {layout: 'boilerplate'});
+});
+
+// Get - Signup
+app.get('/signup', (req, res) => {
+    res.render('onboarding/signup/signup.ejs', {layout: 'boilerplate'});
+});
+
 // GET - Clubs
 app.get('/clubs', async (req, res) => {
     const clubs = await Club.find({});
