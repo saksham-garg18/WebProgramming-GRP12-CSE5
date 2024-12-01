@@ -158,6 +158,14 @@
                 'Content-Type': 'application/json'
             }
         })
+        .then(data => {
+            console.log('Club updated successfully:', data);
+            // Redirect to the club's page
+            window.location.href = `/clubs/${uid}`;
+        })
+
+        
+
         // .then(data => {
         //     if (data.error) {
         //         console.error(data.error);

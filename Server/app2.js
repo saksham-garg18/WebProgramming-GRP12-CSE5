@@ -8,7 +8,6 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Connect to MongoDB
 const connectDB = async () => {
     try {
         await mongoose.connect(process.env.MONGO_URI);
@@ -18,24 +17,19 @@ const connectDB = async () => {
     }
 };
 
-// Handlebars configuration
 const hbs = exphbs.create({
     extname: 'handlebars',
-    layoutsDir: path.join(__dirname, '../Client/hbs'),  // Correct path for layouts
-    partialsDir: path.join(__dirname, '../Client/hbs'), // Correct path for partials
+    layoutsDir: path.join(__dirname, '../Client/hbs'),  
+    partialsDir: path.join(__dirname, '../Client/hbs'), 
 });
 
-// Set up Handlebars
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
-app.set('views', path.join(__dirname, '../Client/hbs')); // Correct path for views
-
-// Middleware
+app.set('views', path.join(__dirname, '../Client/hbs'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static(path.join(__dirname, '../Client/hbs')));  // Serve static files from the Client directory
+app.use(express.static(path.join(__dirname, '../Client/hbs')));  
 
-// Data to inject into the template
 const testimonialsData = {
     testimonials: [
       {
@@ -87,7 +81,6 @@ app.get('/', async (req, res) => {
     });
 });
 
-// Start server
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}/`);
 });

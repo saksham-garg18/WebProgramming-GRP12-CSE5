@@ -5,13 +5,11 @@ const exphbs = require('express-handlebars');
 
 const ejsLayouts = require('express-ejs-layouts');
 const Club = require('./models/club.model.js');
-const User = require('./models/user.model.js');
 const app = express();
 const PORT = process.env.PORT || 3000;
 require('dotenv').config();
 const mongoose = require('mongoose');
 
-// connect DB
 const connectDB = async () => {
     try {
         await mongoose.connect(process.env.MONGO_URI);
@@ -21,28 +19,12 @@ const connectDB = async () => {
     }
 };
 
-// Handlebars configuration
-const hbs = exphbs.create({
-    extname: 'handlebars',
-    layoutsDir: path.join(__dirname, '../Client/hbs'),
-    partialsDir: path.join(__dirname, '../Client/hbs')
-});
-
-// Set up Handlebars
-app.engine('handlebars', hbs.engine);
-app.set('view engine', 'handlebars');
-app.set('views2', path.join(__dirname, '../Client/hbs'));
-
-// Configure EJS
 app.engine('ejs', require('ejs').renderFile);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '../Client/pages'));
 
-// Middleware
 app.use(express.static(path.join(__dirname, '../Client/pages')));
 app.use(ejsLayouts);
-
-// Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -191,89 +173,6 @@ app.post('/bhtsaare', async (req, res) => {
         res.status(201).json(createdClubs);
     } catch (error) {
         res.status(400).json({ message: error.message });
-    }
-});
-
-
-// USER ROUTES --------------------------------->
-
-app.post('/register', async (req, res) => {
-    const { name, email, password } = req.body;
-    console.log('Received registration request:', { name, email });
-
-    try {
-        console.log('Checking for existing user in the database...');
-        const existingUser = await User.findOne({ email });
-        console.log('Existing user check result:', existingUser ? 'User found' : 'No user found');
-
-        if (existingUser) {
-            console.warn('User already exists:', email);
-            return res.status(400).json({ message: 'User already exists' });
-        }
-
-        const user = new User({
-            name,
-            email,
-            password,  
-        });
-
-        try {
-            const savedUser = await user.save();
-            console.log('User created:', savedUser);
-            res.status(201).json({ message: 'User registered successfully', user: savedUser });
-        } catch (error) {
-            console.error('Error saving user:', error);
-            return res.status(500).json({ message: 'Error saving user', error: error.message });
-        }
-
-    } catch (error) {
-        console.error('Error registering user:', error);
-        res.status(500).json({ message: 'Error registering user', error: error.message });
-    }
-});
-
-app.post('/login', async (req, res) => {
-    const { email, password } = req.body;
-    console.log('Received login request for email:', email);
-
-    try {
-        const user = await User.findOne({ email });
-
-        if (!user) {
-            console.log('User not found:', email);
-            return res.status(400).json({ message: 'Invalid credentials' });
-        }
-
-        const isMatch = await user.comparePassword(password);
-
-        if (!isMatch) {
-            console.log('Invalid password for user:', email);
-            return res.status(400).json({ message: 'Invalid credentials' });
-        }
-
-        const token = user.generateAuthToken();
-
-        console.log('User logged in successfully:', email);
-        res.json({ message: 'Login successful', token });
-    } catch (error) {
-        console.error('Error during login:', error);
-        res.status(500).json({ message: 'Server error', error: error.message });
-    }
-});
-
-app.get('/user', async (req, res) => {
-    if (!req.user || !req.user._id) {
-        return res.status(401).json({ message: 'Not authorized' });
-    }
-
-    try {
-        const user = await User.findById(req.user._id).select('-password');
-        if (!user) {
-            return res.status(404).json({ message: 'User not found' });
-        }
-        res.json(user);
-    } catch (error) {
-        res.status(500).json({ message: 'Server error' });
     }
 });
 
