@@ -1,0 +1,43 @@
+.footer-main {
+    background-color: rgba(6, 0, 32, 0.62);
+    width: 100%;
+    height: 100%;
+}
+
+.footer-content {
+    padding: 3.5rem;
+}
+
+.logos-con {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logos-con img {
+    height: 4rem;
+}
+
+.copyright{
+    text-align: center;
+}
+
+.footer-links-con {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+
+.text-links-con,
+.icon-links-con {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.fdivider {
+    margin: 2rem auto;
+    background-color: rgba(255, 255, 255, 0.471);
+    height: 1px;
+    width: 100%;
+}

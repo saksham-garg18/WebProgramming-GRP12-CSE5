@@ -8,7 +8,7 @@
         <div class="row">
             <div class="form-group col-12 col-md-4">
                 <label htmlFor="logo">Logo</label>
-                <input type="file" id="logo" class="form-control" accept='image/*' required />
+                <input type="text" id="logo" class="form-control"  />
                 <div id="logo-feedback" class="invalid-feedback">
                     Please choose a logo.
                 </div>
@@ -110,6 +110,7 @@
     // Function to populate the form fields with the fetched data
     function populateForm(data) {
         document.getElementById('name').value = data.name || '';
+        document.getElementById('logo').value = data.logo || '';
         document.getElementById('motto').value = data.motto || '';
         document.getElementById('about').value = data.about || '';
         document.getElementById('whyus').value = data.whyus || '';

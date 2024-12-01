@@ -2,7 +2,7 @@
   {
     "uid": 1,
     "name": "YRC - Youth Red Cross",
-    "logo": "",
+    "logo": "https://res.cloudinary.com/dhhgecdk1/image/upload/v1731091294/clubs/ze8ugeq7cbfax5p7wnmw.jpg",
     "motto": "Empowering Youth for Humanity",
     "club_email": "youthredcross@bmu.edu.in",
     "phone": 8950180305,
@@ -17,7 +17,7 @@
   {
     "uid": 2,
     "name": "Finonomics Club",
-    "logo": "",
+    "logo": "https://res.cloudinary.com/dhhgecdk1/image/upload/v1731089918/clubs/bzqookvvyazd1sabtncd.jpg",
     "motto": "Promoting financial literacy among BMU students.",
     "club_email": "finonomics@bmu.edu.in",
     "phone": 6397011402,
@@ -33,7 +33,7 @@
   {
     "uid": 3,
     "name": "Agraga - The HR & IR Club",
-    "logo": "",
+    "logo": "https://res.cloudinary.com/dhhgecdk1/image/upload/v1731089483/clubs/ccdynwjxjcqkcwpi1y4n.png",
     "motto": "Where leadership meets excellence!",
     "club_email": "agraga@bmu.edu.in",
     "phone": 8003495372,
@@ -49,7 +49,7 @@
   {
     "uid": 4,
     "name": "SMC - Social Media Club",
-    "logo": "",
+    "logo": "https://res.cloudinary.com/dhhgecdk1/image/upload/v1731091149/clubs/rtk1vwsmxpdogkwdzhnk.jpg",
     "motto": "Where Campus Events meets Social Media Magic",
     "club_email": "smc.club@bmu.edu.in",
     "phone": 8303841168,
@@ -64,7 +64,7 @@
   {
     "uid": 5,
     "name": "Insights Club ",
-    "logo": "",
+    "logo": "https://res.cloudinary.com/dhhgecdk1/image/upload/v1731090148/clubs/wufntfipv8vaq4tapqmw.jpg",
     "motto": "To create a fully student driven initiative that allows learning by sharing, experience, and application of a large variety of skills in conjunction with teamwork, where innovation is met by encouragement and enhanced by more ideas.",
     "club_email": "insights@bmu.edu.in",
     "phone": 7379121659,
@@ -79,7 +79,7 @@
   {
     "uid": 6,
     "name": "PAC - Photography & CInematography Club",
-    "logo": "",
+    "logo": "https://res.cloudinary.com/dhhgecdk1/image/upload/v1731092555/clubs/qqdroi2trubcxhtgzjwt.png",
     "motto": "Turning Moments into Masterpieces",
     "club_email": "pac@bml.edu.in",
     "phone": 6281297050,
@@ -95,7 +95,7 @@
   {
     "uid": 7,
     "name": "ACM BMU Student Chapter",
-    "logo": "",
+    "logo": "https://res.cloudinary.com/dhhgecdk1/image/upload/v1731089263/clubs/naygeqgczryhz6t1jywm.png",
     "motto": "Let's make cool stuff happen!",
     "club_email": "acm@bmu.edu.in",
     "phone": 8826427240,
@@ -112,7 +112,7 @@
   {
     "uid": 8,
     "name": "Environment Club ",
-    "logo": "",
+    "logo": "https://res.cloudinary.com/dhhgecdk1/image/upload/v1731089896/clubs/k7tu51bbpf5e3edbuerq.jpg",
     "motto": "Preserving the planet is our duty—educating, acting, and inspiring sustainable change for future generations.",
     "club_email": "environment@bmu.edu.in",
     "phone": 8320382370,
@@ -128,7 +128,7 @@
   {
     "uid": 9,
     "name": "LiQuiD",
-    "logo": "",
+    "logo": "https://res.cloudinary.com/dhhgecdk1/image/upload/v1731090223/clubs/umaqpkqyli5glvaz9pxn.jpg",
     "motto": "Prajnanam Brahma",
     "club_email": "liquid@bmu.edu.in",
     "phone": 7738866311,
@@ -143,7 +143,7 @@
   {
     "uid": 10,
     "name": "Enactus BMU",
-    "logo": "",
+    "logo": "https://res.cloudinary.com/dhhgecdk1/image/upload/v1731089842/clubs/etmiqfvbvfmpxzubftcp.png",
     "motto": "People, Planet & Profit !!!",
     "club_email": "enactus.bmu@bmu.edu.in",
     "phone": 6299455620,
@@ -159,7 +159,7 @@
   {
     "uid": 11,
     "name": "Wellness & Fight Club",
-    "logo": "",
+    "logo": "https://res.cloudinary.com/dhhgecdk1/image/upload/v1731091264/clubs/qasm0qvk1vyi6snb609t.png",
     "motto": "Health, Strength, Unity, Spirit",
     "club_email": "wnfclub@bmu.edu.in",
     "phone": 9999821333,
@@ -175,7 +175,7 @@
   {
     "uid": 12,
     "name": "TSEC - The Startup And Entreneurship Club ",
-    "logo": "",
+    "logo": "https://res.cloudinary.com/dhhgecdk1/image/upload/v1731091237/clubs/q1xzvsfo7w6xhfcgcb0j.jpg",
     "motto": "Inspiring Ideas, Empowering Entrepreneurs",
     "club_email": "tsec.club@bmu.edu.in",
     "phone": 9971100527,
@@ -191,7 +191,7 @@
   {
     "uid": 13,
     "name": "Sierra",
-    "logo": "",
+    "logo": "https://res.cloudinary.com/dhhgecdk1/image/upload/v1731091016/clubs/ugenskrpldcwuqepf4dw.jpg",
     "motto": "Innovate, Discuss, Game & Grow: Building a Revolutionary Tomorrow.",
     "club_email": "sierra@bmu.edu.in",
     "phone": 9958257072,
@@ -207,7 +207,7 @@
   {
     "uid": 14,
     "name": "Savera",
-    "logo": "",
+    "logo": "https://res.cloudinary.com/dhhgecdk1/image/upload/v1731090674/clubs/veqncn5jsnqiojp88mhp.png",
     "motto": "Together we can make a difference. ",
     "club_email": "savera@bmu.edu.in",
     "phone": 6304402400,
@@ -223,7 +223,7 @@
   {
     "uid": 15,
     "name": "Mritunjaya - The Theatre Society",
-    "logo": "",
+    "logo": "https://res.cloudinary.com/dhhgecdk1/image/upload/v1731090258/clubs/uyw9i89ec61tzagb54tk.png",
     "motto": "PASSION. PERFORMANCE. PERFECTION| मञ्चः मम् ईश्वरः, अभिनय मम् प्रार्थनाः ।",
     "club_email": "mrityunjaya@bmu.edu.in",
     "phone": 8586811185,
@@ -237,7 +237,7 @@
   {
     "uid": 16,
     "name": "NSS BMU",
-    "logo": "",
+    "logo": "https://res.cloudinary.com/dhhgecdk1/image/upload/v1731090338/clubs/bez4ev2oiudnuyewzgym.png",
     "motto": "Not Me, But You",
     "club_email": "nss.bmlmunjaluniversity@bmu.edu.in",
     "phone": 8074096269,
@@ -252,7 +252,7 @@
   {
     "uid": 17,
     "name": "Strokes",
-    "logo": "",
+    "logo": "https://res.cloudinary.com/dhhgecdk1/image/upload/v1731091201/clubs/kyqrdqmnjtz542fqfgiq.png",
     "motto": "\"From the mind to canvas, we dare\" ; \"The palette of infinite possibilities\"",
     "club_email": "strokes@bmu.edu.in",
     "phone": 8584866961,
@@ -267,7 +267,7 @@
   {
     "uid": 18,
     "name": "BMU Robotics Club",
-    "logo": "",
+    "logo": "https://res.cloudinary.com/dhhgecdk1/image/upload/v1731089631/clubs/ezt4k7e2gnwmny8bagbq.png",
     "motto": "Empowering innovation through robotics, fostering creativity, collaboration, and hands-on learning for all.",
     "club_email": "bmuroboticsclub@bmu.edu.in",
     "phone": 7011829682,
@@ -283,7 +283,7 @@
   {
     "uid": 19,
     "name": "Adventure Club ",
-    "logo": "",
+    "logo": "https://res.cloudinary.com/dhhgecdk1/image/upload/v1731090187/clubs/xchpcwyp1ncvdskm1qu2.png",
     "motto": "When adventure calls, we answer! ",
     "club_email": "adventureclub@bmu.edu.in",
     "phone": 7995268885,
@@ -298,7 +298,7 @@
   {
     "uid": 20,
     "name": "Culinary",
-    "logo": "",
+    "logo": "https://res.cloudinary.com/dhhgecdk1/image/upload/v1731089656/clubs/nr23mp5lutraqesuh1ad.png",
     "motto": "Where Flavor Meets Passion",
     "club_email": "culinary.club@bml.edu.in",
     "phone": "77993 00070",
@@ -314,7 +314,7 @@
   {
     "uid": 21,
     "name": "SATA",
-    "logo": "",
+    "logo": "https://res.cloudinary.com/dhhgecdk1/image/upload/v1731090637/clubs/h9yucw1xyveeswi5ko8b.png",
     "motto": "Create, Connect and Collaborate! ",
     "club_email": "sata@bmu.edu.in",
     "phone": 8950549580,
@@ -329,7 +329,7 @@
   {
     "uid": 22,
     "name": "Automobile club",
-    "logo": "",
+    "logo": "https://res.cloudinary.com/dhhgecdk1/image/upload/v1731089524/clubs/lqavwfll1b1bpdl1xh02.jpg",
     "motto": "Drive Your Passion, Ignite Your Future!",
     "club_email": "automobile.club@bmu.edu.in",
     "phone": 7678698129,
@@ -344,7 +344,7 @@
   {
     "uid": 23,
     "name": "Scientific and Computational Mathematics (Sci-Mat)",
-    "logo": "",
+    "logo": "https://res.cloudinary.com/dhhgecdk1/image/upload/v1731090940/clubs/ixmj8ocjaoglifwyyxns.png",
     "motto": "Your Gateway to Scientific Brilliance. ",
     "club_email": "sci-mat@bmu.edu.in",
     "phone": 8222002540,
@@ -361,7 +361,7 @@
   {
     "uid": 24,
     "name": "PFA - The Performing Arts Club",
-    "logo": "",
+    "logo": "https://res.cloudinary.com/dhhgecdk1/image/upload/v1731090609/clubs/rx5l6eg6nqhtzamcxr8b.png",
     "motto": "कला के रंग, मंच के संग",
     "club_email": "pfa@bmu.edu.in",
     "phone": 8962387880,

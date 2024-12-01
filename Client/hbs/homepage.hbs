@@ -5,11 +5,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/style.css" />
+    <link rel="stylesheet" href="/footer.css">
     <link rel="stylesheet" href="homepage.css" />
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
     <title>Home</title>
 </head>
 
 <body>
+
     <div class="home-maincon">
         <!-- Hero Section -->
         <div class="hero-con section">
@@ -47,7 +50,7 @@
         <!-- Image Stack Section -->
         <div class="home-img-stack-con section" id="home-img-stack-con">
             {{#each imageStack}}
-                <div class="img-stacks-cards" style="background-image: url({{this}});"></div>
+            <div class="img-stacks-cards" style="background-image: url({{this}});"></div>
             {{/each}}
         </div>
 
@@ -55,23 +58,23 @@
         <div class="home-testimonials section">
             <div class="test-cards" id="testimonialContainer">
                 {{#each testimonials}}
-                    <div class="test-card">
-                        <div class='quote-i'>
-                            <img src="../../assets/quote-icon.png" alt="" />
+                <div class="test-card">
+                    <div class='quote-i'>
+                        <img src="../../assets/quote-icon.png" alt="" />
+                    </div>
+                    <div class='testi-text'>
+                        <p>{{this.quote}}</p>
+                    </div>
+                    <div class='testi-person'>
+                        <div class="testi-person-img">
+                            <img src="{{this.image}}" alt="" />
                         </div>
-                        <div class='testi-text'>
-                            <p>{{this.quote}}</p>
-                        </div>
-                        <div class='testi-person'>
-                            <div class="testi-person-img">
-                                <img src="{{this.image}}" alt="" />
-                            </div>
-                            <div class="testi-person-info">
-                                <h6>{{this.name}}</h6>
-                                <p>{{this.position}}</p>
-                            </div>
+                        <div class="testi-person-info">
+                            <h6>{{this.name}}</h6>
+                            <p>{{this.position}}</p>
                         </div>
                     </div>
+                </div>
                 {{/each}}
             </div>
         </div>
@@ -86,9 +89,9 @@
                 </div>
                 <div class="horizon-cards" id="horizon-cards">
                     {{#each horizonImages}}
-                        <div class="horizon-card">
-                            <img src="{{this}}" alt="Horizon Image" />
-                        </div>
+                    <div class="horizon-card">
+                        <img src="{{this}}" alt="Horizon Image" />
+                    </div>
                     {{/each}}
                 </div>
             </div>
@@ -102,11 +105,39 @@
         </div>
     </div>
 
+    <div class="footer-main">
+  <div class="footer-content">
+    <!-- Logo Section -->
+    <div class="logos-con">
+      <div class="nexus-con">
+        <img src="https://res.cloudinary.com/deuv3jnzu/image/upload/v1728714684/nav_nexus_logo_telvkl.png" 
+             alt="Nexus Logo" />
+      </div>
+      <div class="bmu-con">
+        <img src="https://res.cloudinary.com/deuv3jnzu/image/upload/v1733051471/BMU__10th_year_logo_Final_1-04_lnxl27.png" alt="BMU Logo" />
+      </div>
+    </div>
+
+
+    <!-- Divider -->
+    <div class="fdivider"></div>
+
+    <!-- Copyright Section -->
+    <div class="copyright-con">
+      <div class="copyright">
+        © Nexus | BML Munjal University | All rights reserved
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
-    <script src="homepage.js"></script>
-    <script src="homepage2.js"></script>
+    <script src="/homepage2.js"></script>
+    <script src="/homepage.js"></script>
 </body>
 
 </html>

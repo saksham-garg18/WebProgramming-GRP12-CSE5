@@ -19,6 +19,10 @@
     box-shadow: 0 0 0.779rem rgba(45, 138, 229, 0.3);
 }
 
+.delete-club-btn-holder .delete-club-btn-link {
+    background-color: none;
+}
+
 .delete-club-btn-holder {
     position: absolute;
     top: 5vw;
@@ -27,7 +31,7 @@
 
 .delete-club-btn {
     color: red;
-    font-size: 1.5rem;
+    font-size: 1rem;
     cursor: pointer;
 }
 

@@ -4,7 +4,7 @@
 <div class="clubdeets-maincon section2">
     <div class="deets-con section2">
         <div class="logo-con">
-            <img src="../../assets/t.png" />
+            <img src="<%= club.logo %>" />
         </div>
 
         <div class="namemotto-con">
@@ -14,6 +14,9 @@
                     <a href="/edit-club/<%= club.uid %>" class="edit-btn-link">
                       <i class="fa-regular fa-pen-to-square club-edit-btn"></i>
                     </a>
+              
+                        <i onclick="deleteClub('<%= club.uid %>')" class="fa-solid fa-trash-can delete-club-btn"></i>
+              
                   </div>
             </div>
 
@@ -24,9 +27,7 @@
     </div>
 
     <div class="delete-club-btn-holder">
-        <button onclick="deleteClub('<%= club.uid %>')" class="delete-btn-link">
-            <i class="fa-solid fa-trash-can delete-club-btn"></i>
-        </button>        
+             
       </div>
 
     <div class="quickinfo-con">
